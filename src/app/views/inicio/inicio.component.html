@@ -1,0 +1,48 @@
+<div class="container">
+
+    <div class="d-flex flex-column w-100 justify-content-center align-items-center">
+        <div class="text-center w-75">
+            <h1>Terapia basada en plantas</h1>
+            <h6>Nuestros productos contienen diferentes perfiles de cannabinoides para el tratamiento de diversas
+                patologías. Te
+                invitamos a explorar nuestro catálogo.</h6>
+        </div>
+    </div>
+
+    <swiper-container>
+        <swiper-slide><img class="w-100 imgg" src="https://i.postimg.cc/zvrK5RdZ/banner1.png" alt=""></swiper-slide>
+        <swiper-slide><img class="w-100" src="https://www.40defiebre.com/wp-content/uploads/2012/10/carrusel_slider.png"
+                alt=""></swiper-slide>
+        <swiper-slide><img class="w-100" src="https://www.40defiebre.com/wp-content/uploads/2012/10/carrusel_slider.png"
+                alt=""></swiper-slide>
+    </swiper-container>
+
+    <div class="row card-container w-100 d-flex justify-content-around mt-4">
+
+        <div *ngFor="let product of database.data.products" class="col-md-4 card text-center" style="width: 18rem;">
+            <h5 class="">{{product.name}}</h5>
+            <div class="d-flex border">
+                <img class="card-img-top" src="{{product.image}}" alt="Card image cap">
+                <div class="benefits">
+            <h6>Beneficios:</h6>
+        </div>
+        </div>
+
+            <div class="card-body">
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.</p>
+                <div class="d-flex justify-content-center">
+                    <h6>{{product.price}}</h6>
+                    <h6>{{product.currency}}</h6>
+                </div>
+                <button class="btn btn-primary">Añadir al carrito</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row d-flex">
+
+    </div>
+</div>
