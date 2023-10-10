@@ -1,8 +1,10 @@
+<h1>dasddsadadas</h1>
+
 <div class="container">
 
     <div class="d-flex flex-column w-100 justify-content-center align-items-center">
         <div class="text-center w-75">
-            <h1>Terapia basada en plantas</h1>
+            <h2>Terapia basada en plantas</h2>
             <h6>Nuestros productos contienen diferentes perfiles de cannabinoides para el tratamiento de diversas
                 patologías. Te
                 invitamos a explorar nuestro catálogo.</h6>
@@ -19,14 +21,15 @@
 
     <div class="row card-container w-100 d-flex justify-content-around mt-4">
 
-        <div *ngFor="let product of database.data.products" class="col-md-4 card text-center" style="width: 18rem;">
-            <h5 class="">{{product.name}}</h5>
+        <mat-card *ngFor="let product of database.data.products" class="col-md-4 text-center bg-white"
+            style="width: 18rem;">
+            <h2 class="">{{product.name}}</h2>
             <div class="d-flex border">
                 <img class="card-img-top" src="{{product.image}}" alt="Card image cap">
                 <div class="benefits">
-            <h6>Beneficios:</h6>
-        </div>
-        </div>
+                    <h3>Beneficios:</h3>
+                </div>
+            </div>
 
             <div class="card-body">
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
@@ -36,9 +39,11 @@
                     <h6>{{product.price}}</h6>
                     <h6>{{product.currency}}</h6>
                 </div>
-                <button class="btn btn-primary">Añadir al carrito</button>
+                <button mat-raised-button class="btn btn-primary" (click)="addProduct(product)">Añadir al carrito
+                    <mat-icon>add_shopping_cart</mat-icon>
+                </button>
             </div>
-        </div>
+        </mat-card>
 
     </div>
 

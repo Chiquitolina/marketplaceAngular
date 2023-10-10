@@ -1,6 +1,11 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {MatButtonModule} from '@angular/material/button';
+import { MatIconModule} from '@angular/material/icon';
+import {MatCardModule} from '@angular/material/card';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatDialogModule} from '@angular/material/dialog';
 
 import { register } from 'swiper/element/bundle';
 // register Swiper custom elements
@@ -13,9 +18,10 @@ import { TiendaComponent } from './views/tienda/tienda.component';
 import { AnaliticasComponent } from './views/analiticas/analiticas.component';
 import { NosotrosComponent } from './views/nosotros/nosotros.component';
 import { ContactoComponent } from './views/contacto/contacto.component';
-import { BlgoComponent } from './views/blgo/blgo.component';
+import { BlogComponent } from './views/blog/blog.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';import { FooterComponent } from './components/footer/footer.component';
+import { CartDialogComponent } from './components/cart-dialog/cart-dialog.component';
 
 @NgModule({
   declarations: [
@@ -25,15 +31,22 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';i
     AnaliticasComponent,
     NosotrosComponent,
     ContactoComponent,
-    BlgoComponent,
+    BlogComponent,
     ProductCardComponent,
-    FooterComponent
+    FooterComponent,
+    CartDialogComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatButtonModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatIconModule,
+    MatCardModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatDialogModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent],

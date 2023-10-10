@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./analiticas.component.css']
 })
 export class AnaliticasComponent {
+  shouldRun = [/(^|\.)plnkr\.co$/, /(^|\.)stackblitz\.io$/].some(h => h.test(window.location.host));
 
 }

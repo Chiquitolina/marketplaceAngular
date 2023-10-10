@@ -1,16 +1,5 @@
-export interface imgsBanner {
-  id: number;
-  src: string;
-}
-
-export interface Product {
-  id: number;
-  name: string;
-  price: number;
-  currency: string;
-  image: string;
-  benefits: string[];
-}
+import { Product } from "../models/Products";
+import { imgsBanner } from "../models/ImgsBanner";
 
 export interface Database {
     data: {
@@ -50,6 +39,7 @@ export const database: Database = {
     imgsbanner : [
 
     ]
+    
   }
 }
 

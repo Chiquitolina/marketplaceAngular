@@ -1,7 +1,53 @@
+<div class="mat-fab">
+  <button class="minifab" mat-mini-fab mat-mini-fab color="basic">
+    <b>{{this.cartSer.cart.products.length}}</b>
+  </button>
+  <button mat-fab color="primary"><mat-icon>shopping_cart</mat-icon>
+  </button>
+</div>
+
+<mat-toolbar>
+  <div class="d-flex justify-content-between w-100">
+    <span>
+      My App
+    </span>
+    <div class="d-flex justify-content-around buttons">
+      <button mat-button>
+        <a class="nav-link active" aria-current="page" href="#">
+          <i class="bi bi-house-door-fill"></i>
+          Inicio</a>
+      </button>
+      <button mat-button> <a routerLink="/tienda" class="nav-link active" aria-current="page" href="#">
+          <i class="bi bi-shop"></i>
+          Tienda</a>
+      </button>
+      <button mat-button>
+        <a routerLink="/analiticas" class="nav-link active" aria-current="page" href="#">
+          <i class="bi bi-clipboard2-data"></i>
+          Analíticas</a>
+      </button>
+      <button mat-button><a routerLink="/nosotros" class="nav-link active" aria-current="page" href="#">
+          <i class="bi bi-person-arms-up"></i>
+          Nosotros</a>
+      </button>
+      <button mat-button><a routerLink="/nosotros" class="nav-link active" aria-current="page" href="#">
+          <i class="bi bi-person-arms-up"></i>
+          Nosotros</a>
+      </button>
+      <button mat-button>
+        <a routerLink="/contacto" class="nav-link active" aria-current="page" href="#">
+          <i class="bi bi-telephone"></i>
+          Contacto</a>
+      </button>
+    </div>
+  </div>
+
+</mat-toolbar>
 <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
     <img class="rounded" src="https://i.postimg.cc/d3ZsW-WRJ/logonora.png" alt="" style="width: 8rem;">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse w-100" id="navbarSupportedContent">
