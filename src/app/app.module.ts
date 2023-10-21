@@ -6,6 +6,8 @@ import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatInputModule} from '@angular/material/input';
 
 import { register } from 'swiper/element/bundle';
 // register Swiper custom elements
@@ -22,6 +24,10 @@ import { BlogComponent } from './views/blog/blog.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';import { FooterComponent } from './components/footer/footer.component';
 import { CartDialogComponent } from './components/cart-dialog/cart-dialog.component';
+import {MatListModule} from '@angular/material/list';
+import {MatTableModule} from '@angular/material/table';
+import { CheckoutComponent } from './components/checkout/checkout.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -34,7 +40,8 @@ import { CartDialogComponent } from './components/cart-dialog/cart-dialog.compon
     BlogComponent,
     ProductCardComponent,
     FooterComponent,
-    CartDialogComponent
+    CartDialogComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
@@ -45,8 +52,13 @@ import { CartDialogComponent } from './components/cart-dialog/cart-dialog.compon
     MatCardModule,
     MatToolbarModule,
     MatSidenavModule,
-    MatDialogModule
-    
+    MatDialogModule,
+    MatListModule,
+    MatTableModule,
+    MatStepperModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent],

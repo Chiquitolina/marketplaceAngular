@@ -12,6 +12,7 @@
     position:relative ;
     right: 6rem;
     width: 13rem;
+    border-radius: 1rem;
 }
 
 .benefits {
@@ -24,5 +25,9 @@
   bottom: 2rem; /* Ajusta la distancia desde la parte inferior según tus necesidades */
   left: 2rem;
   z-index: 1000;
+}
+
+.title {
+    font-size: 3rem;
 }
 

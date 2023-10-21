@@ -1,13 +1,11 @@
-<h1>dasddsadadas</h1>
-
 <div class="container">
 
     <div class="d-flex flex-column w-100 justify-content-center align-items-center">
-        <div class="text-center w-75">
-            <h2>Terapia basada en plantas</h2>
-            <h6>Nuestros productos contienen diferentes perfiles de cannabinoides para el tratamiento de diversas
+        <div class="text-center w-75 d-flex flex-column">
+            <h1>Terapia basada en plantas</h1>
+            <h3>Nuestros productos contienen diferentes perfiles de cannabinoides para el tratamiento de diversas
                 patologías. Te
-                invitamos a explorar nuestro catálogo.</h6>
+                invitamos a explorar nuestro catálogo.</h3>
         </div>
     </div>
 
@@ -21,13 +19,13 @@
 
     <div class="row card-container w-100 d-flex justify-content-around mt-4">
 
-        <mat-card *ngFor="let product of database.data.products" class="col-md-4 text-center bg-white"
+        <mat-card *ngFor="let product of database.data.products" class="col-md-4 text-center bg-white mt-2 mb-2 text-dark"
             style="width: 18rem;">
             <h2 class="">{{product.name}}</h2>
-            <div class="d-flex border">
+            <div class="d-flex">
                 <img class="card-img-top" src="{{product.image}}" alt="Card image cap">
                 <div class="benefits">
-                    <h3>Beneficios:</h3>
+                    <h4>Beneficios:</h4>
                 </div>
             </div>
 
@@ -39,15 +37,12 @@
                     <h6>{{product.price}}</h6>
                     <h6>{{product.currency}}</h6>
                 </div>
-                <button mat-raised-button class="btn btn-primary" (click)="addProduct(product)">Añadir al carrito
+                <button mat-raised-button class="btn btn-primary mb-1" (click)="addProduct({product, cantidad : 1, priceconjunto: 0})">Añadir al carrito
                     <mat-icon>add_shopping_cart</mat-icon>
                 </button>
             </div>
         </mat-card>
 
     </div>
-
-    <div class="row d-flex">
-
-    </div>
 </div>
+

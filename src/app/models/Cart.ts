@@ -1,6 +1,6 @@
-import { Product } from "./Products"
+import { CartItem } from "./CartItem"
 
 export interface Cart {
-    products: Product[]
+    items: CartItem[]
     finalPrice: number
 }

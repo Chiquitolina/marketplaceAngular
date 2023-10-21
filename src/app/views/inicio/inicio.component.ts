@@ -4,6 +4,7 @@ import { database, Database } from '../../data/data';  // Ajusta la ruta según 
 import { register } from 'swiper/element/bundle';
 import Swiper from 'swiper';  
 import { Product } from 'src/app/models/Products';
+import { CartItem } from 'src/app/models/CartItem';
 
 
 // Registra Swiper como elemento personalizado
@@ -22,8 +23,8 @@ export class InicioComponent implements AfterViewInit, OnInit {
 
   }
 
-  addProduct(producto: Product) {
-    this.cartServ.addProductToCart(producto)
+  addProduct(cartItem: CartItem) {
+    this.cartServ.addItemToCart(cartItem)
   }
 
   ngAfterViewInit() {
