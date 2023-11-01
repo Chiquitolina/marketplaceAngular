@@ -8,6 +8,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatInputModule} from '@angular/material/input';
+import { HttpClientModule } from '@angular/common/http';
+
 
 import { register } from 'swiper/element/bundle';
 // register Swiper custom elements
@@ -28,6 +30,10 @@ import {MatListModule} from '@angular/material/list';
 import {MatTableModule} from '@angular/material/table';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatExpansionModule} from '@angular/material/expansion';
+import { AddanalyticComponent } from './addanalytic/addanalytic.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+
 
 @NgModule({
   declarations: [
@@ -41,7 +47,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ProductCardComponent,
     FooterComponent,
     CartDialogComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    AddanalyticComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +65,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatStepperModule,
     FormsModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    HttpClientModule,
+    MatExpansionModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent],

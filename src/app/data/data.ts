@@ -15,20 +15,20 @@ export const database: Database = {
         id: 1,
         name: 'GUMMIES DULCES SUEÑOS',
         description: '',
-        price: 31.8,
+        price: 2,
         currency : 'ARS',
         image: 'https://i.postimg.cc/3Rj948Q5/Sin-t-tulo.png',
-        benefits: [],
+        analitics: [],
         contenido: '30u / 150mg'
       },
       {
         id: 2,
         name: 'EQUILIBRIO',
         description: '',
-        price: 323.8,
+        price: 1,
         currency : 'ARS',
         image: 'https://i.postimg.cc/jdyP8vSx/EQUILIBRIO.png',
-        benefits: [],
+        analitics: [],
         contenido: '200mg / 15ml'
       },
       {
@@ -38,7 +38,7 @@ export const database: Database = {
         price: 123.8,
         currency : 'ARS',
         image: 'https://i.postimg.cc/T1F0rP0t/ALIVIO.png',
-        benefits: [],
+        analitics: [],
         contenido: '200mg / 15ml'
       },  
       {
@@ -48,7 +48,7 @@ export const database: Database = {
         price: 123.8,
         currency : 'ARS',
         image: 'https://i.postimg.cc/T1F0rP0t/ALIVIO.png',
-        benefits: [],
+        analitics: [],
         contenido: '200mg / 15ml'
       },   
       {
@@ -58,17 +58,17 @@ export const database: Database = {
         price: 123.8,
         currency : 'ARS',
         image: 'https://i.postimg.cc/T1F0rP0t/ALIVIO.png',
-        benefits: [],
+        analitics: [],
         contenido: '200mg / 15ml'
       }, 
       {
         id: 6,
         name: 'CREMA FULL SPECTRUM',
         description: '',
-        price: 123.8,
+        price: 3,
         currency : 'ARS',
         image: 'https://i.postimg.cc/T1F0rP0t/ALIVIO.png',
-        benefits: [],
+        analitics: [],
         contenido: '100cm / 700mg'
       },     
     ],

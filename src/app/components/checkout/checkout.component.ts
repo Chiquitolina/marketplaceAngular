@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {MatDialog, MatDialogRef, MatDialogModule} from '@angular/material/dialog';
 import {FormBuilder, Validators, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { CartServiceService } from 'src/app/services/cart/cart-service.service';
+import { PaymentsService } from 'src/app/services/payments/payments.service';
 
 
 @Component({
@@ -8,9 +10,11 @@ import {FormBuilder, Validators, FormsModule, ReactiveFormsModule} from '@angula
   templateUrl: './checkout.component.html',
   styleUrls: ['./checkout.component.css']
 })
-export class CheckoutComponent {
+export class CheckoutComponent implements OnInit {
   constructor(public dialogRef: MatDialogRef<CheckoutComponent>,
-              private _formBuilder: FormBuilder) {}
+              private _formBuilder: FormBuilder,
+              public cartSer: CartServiceService,
+              private paymentSer: PaymentsService) {}
 
   firstFormGroup = this._formBuilder.group({
     firstCtrl: ['', Validators.required],
@@ -18,10 +22,28 @@ export class CheckoutComponent {
   secondFormGroup = this._formBuilder.group({
     secondCtrl: ['', Validators.required],
   });
-  isLinear = false;
+  isLinear = true;
+  public responser : boolean = false;
+  public url: string = ''
 
   public backToCart() : void {
     this.dialogRef.close();
+  }
+
+  public abrirPago() {
+    window.open(this.url, '_blank');
+  }
+
+  generateOrder() {
+    this.responser = false;
+    this.paymentSer.createOrder(this.cartSer.cart)
+    .subscribe((response) => {
+      this.responser = true;
+      this.url = response.message
+    })
+  }
+
+  ngOnInit(): void {
   }
 
 }

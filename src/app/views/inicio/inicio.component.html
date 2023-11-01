@@ -1,9 +1,13 @@
 <div class="container">
 
+    <div class="w-100 d-flex titcontainer">
+        <h2 class="titulo">Inicio</h2>
+      </div>
+
     <div class="d-flex flex-column w-100 justify-content-center align-items-center">
-        <div class="text-center w-75 d-flex flex-column">
-            <h1>Terapia basada en plantas</h1>
-            <h3>Nuestros productos contienen diferentes perfiles de cannabinoides para el tratamiento de diversas
+        <div class="text-center w-100 d-flex flex-column">
+            <h1 class="">Terapia basada en plantas</h1>
+            <h3 class="m-4">Nuestros productos contienen diferentes perfiles de cannabinoides para el tratamiento de diversas
                 patologías. Te
                 invitamos a explorar nuestro catálogo.</h3>
         </div>
@@ -19,30 +23,36 @@
 
     <div class="row card-container w-100 d-flex justify-content-around mt-4">
 
-        <mat-card *ngFor="let product of database.data.products" class="col-md-4 text-center bg-white mt-2 mb-2 text-dark"
+        <mat-card *ngFor="let product of database.data.products" class="col-md-4 text-center bg-white mt-3 mb-3 text-dark"
             style="width: 18rem;">
-            <h2 class="">{{product.name}}</h2>
-            <div class="d-flex">
-                <img class="card-img-top" src="{{product.image}}" alt="Card image cap">
-                <div class="benefits">
-                    <h4>Beneficios:</h4>
-                </div>
+            <h2 class="mb-0">{{product.name}}</h2>
+            <h5>{{product.contenido}}</h5>
+            <div class="d-flex justify-content-center">
+                <img class="card-img-top" src="{{product.image}}" alt="Card image cap" >
             </div>
 
             <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's
-                    content.</p>
                 <div class="d-flex justify-content-center">
-                    <h6>{{product.price}}</h6>
-                    <h6>{{product.currency}}</h6>
+                    <h2>{{product.price}}</h2>
+                    <h2>{{product.currency}}</h2>
                 </div>
-                <button mat-raised-button class="btn btn-primary mb-1" (click)="addProduct({product, cantidad : 1, priceconjunto: 0})">Añadir al carrito
-                    <mat-icon>add_shopping_cart</mat-icon>
+                <div class="d-flex flex-column">
+                    <button mat-raised-button class="btn btn-primary mb-1 m-2" (click)="addProduct({product, cantidad: 1, priceconjunto: 0})">Añadir al carrito
+                        <mat-icon>add_shopping_cart</mat-icon>
+                    </button>
+                    <div class="d-flex">
+                    <button mat-raised-button class="w-25 m-1" color="warn" >
+                    <mat-icon>delete</mat-icon>
                 </button>
+                <button mat-raised-button class="w-25 m-1" color="primary" >
+                    <mat-icon>edit</mat-icon>
+                </button>
+            </div>
+                </div>
             </div>
         </mat-card>
 
     </div>
+
 </div>
 

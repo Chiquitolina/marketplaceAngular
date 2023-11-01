@@ -8,16 +8,17 @@
     object-fit: contain; /* Escala la imagen manteniendo la relación de aspecto y cubriendo el área disponible */
 }
 
-.card-img-top {
-    position:relative ;
-    right: 6rem;
-    width: 13rem;
-    border-radius: 1rem;
+.titulo {
+    font-size: 2.3rem;
+    margin-top: 3rem;
 }
 
-.benefits {
-    position: absolute;
-    right: 2.8rem;
+
+.card-img-top {
+    width: 100%;
+    height: 14rem;
+    border-radius: 1rem;
+    margin: 1rem;
 }
 
 .mat-fab {

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { Cart } from 'src/app/models/Cart';
 import { CartItem } from 'src/app/models/CartItem';
 
@@ -34,15 +35,16 @@ export class CartServiceService {
   }
 
 
-  public removeItemFromCart(itemcart: CartItem) : void {
+  public removeItemFromCart(itemcart: CartItem, side?: any) : void {
     const itemToRemove = this.cart.items.find((item: CartItem) => {
       item.product.name == itemcart.product.name
-    })
+    });
     const indexItem = this.cart.items.findIndex((item:CartItem) => {
       item == itemToRemove
-    })
-    this.cart.items.splice(indexItem, 1)
-    this.cart.finalPrice = this.cart.finalPrice - (itemcart.product.price * itemcart.cantidad)
+    });
+    this.cart.items.splice(indexItem, 1);
+    this.cart.finalPrice = this.cart.finalPrice - (itemcart.product.price * itemcart.cantidad);
+    (this.cart.items.length == 0) ? side.close() : 0  
   }
 
   public cleanCart(): void {

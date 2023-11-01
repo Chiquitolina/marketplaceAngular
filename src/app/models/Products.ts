@@ -6,5 +6,6 @@ export interface Product {
     currency: string;
     image: string;
     contenido: string;
-    benefits: string[];
+    analitics: any[];
 }
+
