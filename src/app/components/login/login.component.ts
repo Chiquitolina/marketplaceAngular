@@ -10,22 +10,19 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 }
 
 @Component({
-  selector: 'app-contacto',
-  templateUrl: './contacto.component.html',
-  styleUrls: ['./contacto.component.css']
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
 })
-export class ContactoComponent {
+export class LoginComponent {
 
   emailFormControl = new FormControl('', [
     Validators.required,
     Validators.email,
   ]);
 
-  nombreFormControl = new FormControl('', [
-    Validators.required,
-  ]);
-
-  mensajeFormControl = new FormControl('', [
+  
+  passwordFormControl = new FormControl('', [
     Validators.required,
   ]);
 

@@ -8,6 +8,11 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatInputModule} from '@angular/material/input';
+import {MatTableModule} from '@angular/material/table';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
+import {MatSort, MatSortModule, SortDirection} from '@angular/material/sort';
+
 import { HttpClientModule } from '@angular/common/http';
 
 
@@ -27,12 +32,18 @@ import { ProductCardComponent } from './components/product-card/product-card.com
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';import { FooterComponent } from './components/footer/footer.component';
 import { CartDialogComponent } from './components/cart-dialog/cart-dialog.component';
 import {MatListModule} from '@angular/material/list';
-import {MatTableModule} from '@angular/material/table';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { AddanalyticComponent } from './addanalytic/addanalytic.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { CartbuttonsComponent } from './components/cartbuttons/cartbuttons.component';
+import { TiendacompComponent } from './components/tiendacomp/tiendacomp.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { LoginComponent } from './components/login/login.component';
+import { LoginviewComponent } from './views/loginview/loginview.component';
+import { AdminComponent } from './views/admin/admin.component';
+import { EditProductComponent } from './components/edit-product/edit-product.component';
 
 
 @NgModule({
@@ -48,7 +59,14 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     FooterComponent,
     CartDialogComponent,
     CheckoutComponent,
-    AddanalyticComponent
+    AddanalyticComponent,
+    CartbuttonsComponent,
+    TiendacompComponent,
+    NavbarComponent,
+    LoginComponent,
+    LoginviewComponent,
+    AdminComponent,
+    EditProductComponent
   ],
   imports: [
     BrowserModule,
@@ -68,7 +86,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatInputModule,
     HttpClientModule,
     MatExpansionModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatPaginatorModule,
+    MatProgressSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

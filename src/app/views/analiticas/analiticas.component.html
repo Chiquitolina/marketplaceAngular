@@ -1,97 +1,108 @@
 <div class="container">
-  <div class="w-100 m-3">
-    <h1>Analíticas</h1>
+  <div class="w-100 d-flex justify-content-end">
+    <h2 class="titulo">Analíticas</h2>
   </div>
 
+  <hr />
 
   <div class="m-5">
-      <h3>
-  Analíticas de Productos
-</h3>
-    <h4> Desde el día en que esta compañia se fundó, decidimos que uno de los valores que nos caracterizaría es la total
-      transparencia en nuestro producto final. </h4>
+    <h3>Analíticas de Productos</h3>
+    <h4>
+      Desde el día en que esta compañia se fundó, decidimos que uno de los
+      valores que nos caracterizaría es la total transparencia en nuestro
+      producto final.
+    </h4>
 
-    <h4>Enlistamos en esta página nuestros lotes de los diferentes productos que SimpleAceite ofrece. Cada lote se
-      encuentra específicado en la caja de nuestros productos. Busca el código del mismo y encuéntralo en el listado
-      debajo para validar el perfil de cannabinoides de tu producto.</h4>
+    <h4>
+      Enlistamos en esta página nuestros lotes de los diferentes productos que
+      NORA ofrece. Cada lote se encuentra específicado en la caja de nuestros
+      productos. Busca el código del mismo y encuéntralo en el listado debajo
+      para validar el perfil de cannabinoides de tu producto.
+    </h4>
   </div>
 
   <div class="container">
     <h2 class="m-2">Listado de analíticas:</h2>
 
     <mat-accordion class="m-3">
-      <mat-expansion-panel class="" *ngFor="let product of database.data.products" (opened)="panelOpenState = true"
-        (closed)="panelOpenState = false" style="min-height: 7rem;" class=" w-100">
+      <mat-expansion-panel
+        class=""
+        *ngFor="let product of database.data.products"
+        (opened)="panelOpenState = true"
+        (closed)="panelOpenState = false"
+        style="min-height: 7rem"
+        class="w-100 bg-light"
+      >
         <mat-expansion-panel-header class="">
           <div class="d-flex w-100">
-            <mat-panel-title class="mt-5" style="font-size: 1.7rem; font-style: italic; font-weight: 300">
-              {{product.name}}
+            <mat-panel-title
+              class="mt-5"
+              style="
+                font-size: 1.7rem;
+                font-style: italic;
+                font-weight: 300;
+                color: black;
+              "
+            >
+              {{ product.name }}
             </mat-panel-title>
-            <mat-panel-description>
-            </mat-panel-description>
+            <mat-panel-description> </mat-panel-description>
           </div>
         </mat-expansion-panel-header>
         <mat-list>
           <mat-list-item>
-            <mat-icon matListItemIcon>folder</mat-icon>
+            <mat-icon matListItemIcon style="color: black">folder</mat-icon>
             <div class="d-flex justify-content-between">
-              <div>
-                ANALITICA
-              </div>
-              <a mat-raised-button color="basic"><mat-icon>cloud_download</mat-icon></a>
+              <div class="m-3"></div>
+              <a mat-raised-button class="m-3"
+                ><mat-icon>cloud_download</mat-icon></a
+              >
             </div>
           </mat-list-item>
           <mat-divider></mat-divider>
           <mat-list-item>
-            <mat-icon matListItemIcon>folder</mat-icon>
+            <mat-icon matListItemIcon style="color: black">folder</mat-icon>
             <div class="d-flex justify-content-between">
-              <div>
-                ANALITICA
-              </div>
-              <a mat-raised-button color="basic"><mat-icon>cloud_download</mat-icon></a>
+              <div class="m-3"></div>
+              <a mat-raised-button class="m-3"
+                ><mat-icon>cloud_download</mat-icon></a
+              >
             </div>
-
-          </mat-list-item>
-                    <mat-divider></mat-divider>
-
-          <mat-list-item>
-            <mat-icon matListItemIcon>folder</mat-icon>
-            <div class="d-flex justify-content-between">
-              <div>
-                ANALITICA
-              </div>
-              <a mat-raised-button color="basic"><mat-icon>cloud_download</mat-icon></a>
-            </div>
-
           </mat-list-item>
           <mat-divider></mat-divider>
 
           <mat-list-item>
-            <mat-icon matListItemIcon>folder</mat-icon>
+            <mat-icon matListItemIcon style="color: black">folder</mat-icon>
             <div class="d-flex justify-content-between">
-            <div>
-              ANALITICA
+              <div class="m-3"></div>
+              <a mat-raised-button class="m-3"
+                ><mat-icon>cloud_download</mat-icon></a
+              >
             </div>
-            <a mat-raised-button color="basic"><mat-icon>cloud_download</mat-icon></a>
-          </div>
-
-
           </mat-list-item>
           <mat-divider></mat-divider>
 
           <mat-list-item>
-            <mat-icon matListItemIcon>folder</mat-icon>
+            <mat-icon matListItemIcon style="color: black">folder</mat-icon>
             <div class="d-flex justify-content-between">
-              <div>
-                ANALITICA
-              </div>
-              <a mat-raised-button color="basic"><mat-icon>cloud_download</mat-icon></a>
+              <div class="m-3"></div>
+              <a mat-raised-button class="m-3"
+                ><mat-icon>cloud_download</mat-icon></a
+              >
             </div>
+          </mat-list-item>
+          <mat-divider></mat-divider>
 
-
+          <mat-list-item>
+            <mat-icon matListItemIcon style="color: black">folder</mat-icon>
+            <div class="d-flex justify-content-between">
+              <div class="m-3"></div>
+              <a mat-raised-button class="m-3"
+                ><mat-icon>cloud_download</mat-icon></a
+              >
+            </div>
           </mat-list-item>
         </mat-list>
-
       </mat-expansion-panel>
     </mat-accordion>
   </div>

@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
 
+  public isMenuOpen: boolean = false;
+
+  
+  
+
 }

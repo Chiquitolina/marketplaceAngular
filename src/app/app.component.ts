@@ -37,7 +37,7 @@ export class AppComponent implements OnInit {
 
   openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
     this.dialog.open(CheckoutComponent, {
-      width: '100%',
+      width: '140%',
       height: '100%',
       enterAnimationDuration,
       exitAnimationDuration,

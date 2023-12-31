@@ -1,0 +1,39 @@
+<h1 class="text-white m-3">Editar producto</h1>
+
+<div class="w-100 d-flex justify-content-center">
+    <form action="" class="d-flex flex-column w-75">
+
+        <mat-form-field>
+            <mat-label>Nombre</mat-label>
+            <input [value]="this.data.name" matInput>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Precio</mat-label>
+            <input [value]="this.data.price" matInput>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Descripción</mat-label>
+            <input [value]="this.data.description" matInput>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Ratio</mat-label>
+            <input [value]="this.data.ratio" matInput>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Contenido</mat-label>
+            <input [value]="this.data.contenido" matInput>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Link imagen</mat-label>
+            <input [value]="this.data.image" matInput>
+        </mat-form-field>
+        <button class="btn" mat-raised-button>Añadir analítica</button>
+
+        <div> <button class="btn m-3" color="accent" mat-raised-button>Guardar</button>
+            <button class="btn m-3" color="warn" mat-raised-button>Cancelar</button>
+
+        </div>
+
+
+    </form>
+</div>

@@ -5,6 +5,7 @@ export interface Product {
     price: number;
     currency: string;
     image: string;
+    ratio: string;
     contenido: string;
     analitics: any[];
 }

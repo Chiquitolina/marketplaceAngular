@@ -6,6 +6,8 @@ import { AnaliticasComponent } from './views/analiticas/analiticas.component';
 import { NosotrosComponent } from './views/nosotros/nosotros.component';
 import { ContactoComponent } from './views/contacto/contacto.component';
 import { BlogComponent } from './views/blog/blog.component';
+import { LoginviewComponent } from './views/loginview/loginview.component';
+import { AdminComponent } from './views/admin/admin.component';
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
@@ -13,7 +15,9 @@ const routes: Routes = [
   { path: 'analiticas', component: AnaliticasComponent },
   { path: 'nosotros', component: NosotrosComponent },
   { path: 'contacto', component: ContactoComponent },
-  { path: 'blog', component: BlogComponent }
+  { path: 'blog', component: BlogComponent },
+  { path: 'login', component: LoginviewComponent },
+  { path: 'admin', component: AdminComponent }
 ];
 
 @NgModule({

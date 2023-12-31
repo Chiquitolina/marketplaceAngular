@@ -14,12 +14,4 @@ export class TiendaComponent {
   database: Database = database;
 
 
-  constructor(private cartServ: CartServiceService) {
-    
-  }
-
-  addProduct(cartItem: CartItem) {
-    this.cartServ.addItemToCart(cartItem)
-  }
-
 }

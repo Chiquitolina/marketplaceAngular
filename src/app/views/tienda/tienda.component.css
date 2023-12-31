@@ -1,28 +1,28 @@
 .card {
-    width: 44rem;
+  width: 44rem;
 }
 
 .imgg {
-    height: 30rem;
-    width: 100%;
-    object-fit: contain; /* Escala la imagen manteniendo la relación de aspecto y cubriendo el área disponible */
+  height: 30rem;
+  width: 100%;
+  object-fit: contain; /* Escala la imagen manteniendo la relación de aspecto y cubriendo el área disponible */
 }
 
 .titulo {
-    font-size: 2.3rem;
-    margin-top: 3rem;
+  font-size: 2.3rem;
+  margin-top: 3rem;
+  margin-left: 3rem;
 }
 
-
 .card-img-top {
-    width: 100%;
-    height: 14rem;
-    border-radius: 1rem;
-    margin: 1rem;
+  width: 100%;
+  height: 14rem;
+  border-radius: 1rem;
+  margin: 1rem;
 }
 
 .mat-fab {
-    position: fixed;
+  position: fixed;
   bottom: 2rem; /* Ajusta la distancia desde la parte inferior según tus necesidades */
   left: 2rem;
   z-index: 1000;

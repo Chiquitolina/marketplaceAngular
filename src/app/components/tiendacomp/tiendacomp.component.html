@@ -1,0 +1,53 @@
+<div class="w-100 d-flex justify-content-center">
+
+    <div class="row card-container w-100 d-flex justify-content-around mt-4">
+
+
+        <mat-card *ngFor="let product of database.data.products"
+            class="col-md-4 text-center mt-3 mb-3 text-dark" style="width: 18rem; background-color: whitesmoke
+
+            ;">
+
+            <h2 class="mb-0">{{product.name}}</h2>
+            <h5>{{product.contenido}}</h5>
+            <hr>
+            <button class="ratio" *ngIf="product.ratio" mat-fab color="accent">
+
+                <b><p class="m-0 mt-2">Ratio</p></b>
+                <p class="m-0">{{product.ratio}}</p>
+    
+                </button>
+            <div class="d-flex justify-content-center">
+                <img class="card-img-top" src="{{product.image}}" alt="Card image cap">
+            </div>
+
+            <div class="card-body">
+                <div style="min-height: 7rem">
+                    <p class="card-text">{{product.description}}</p>
+                </div>
+                <div class="d-flex justify-content-center w-100" style="border-radius: 3rem; border: 3px solid white; background-color: whitesmoke
+
+                ;">
+                    <h2 class="m-1">${{product.price}}</h2>
+
+                </div>
+                <div class="d-flex flex-column">
+                    <button mat-raised-button class="btn btn-primary m-2"
+                        (click)="addProduct({product, cantidad: 1, priceconjunto: 0})">Añadir al carrito
+                        <mat-icon>add_shopping_cart</mat-icon>
+                    </button>
+                    <!--
+                    <div class="d-flex">
+                        <button mat-raised-button class="w-25 m-1" color="warn">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                        <button mat-raised-button class="w-25 m-1" color="access">
+                            <mat-icon>edit</mat-icon>
+                        </button>
+                    </div>-->
+                </div>
+            </div>
+        </mat-card>
+
+    </div>
+</div>

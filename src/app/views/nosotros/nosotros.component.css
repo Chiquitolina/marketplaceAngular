@@ -1,8 +1,10 @@
-h2 {
-    font-size: 2rem;
+h1 {
+  font-size: 2.7rem;
+  font-weight: 500;
+  margin-top: 3rem;
 }
 
 .titulo {
-    font-size: 2.3rem;
-    margin-top: 3rem;
+  font-size: 2.3rem;
+  margin-top: 3rem;
 }

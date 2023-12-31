@@ -34,7 +34,9 @@ export class InicioComponent implements AfterViewInit, OnInit {
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev'
-      }
+      },
+      speed: 1000, // Velocidad de la animación en milisegundos
+      autoplay: true
     });
   }
   

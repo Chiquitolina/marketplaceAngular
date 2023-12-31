@@ -1,45 +1,9 @@
 <div class="container">
+  <div class="w-100 d-flex justify-content-end">
+    <h2 class="titulo">Tienda</h2>
+  </div>
 
-    <div class="w-100 d-flex ">
-        <h2 class="titulo">Tienda</h2>
-      </div>
+  <hr />
 
-    <div class="row card-container w-100 d-flex justify-content-around mt-4">
-
-
-
-        <mat-card *ngFor="let product of database.data.products" class="col-md-4 text-center bg-white mt-3 mb-3 text-dark"
-            style="width: 18rem;">
-            <h2 class="mb-0">{{product.name}}</h2>
-            <h5>{{product.contenido}}</h5>
-            <div class="d-flex justify-content-center">
-                <img class="card-img-top" src="{{product.image}}" alt="Card image cap" >
-            </div>
-
-            <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's
-                    content.</p>
-                <div class="d-flex justify-content-center">
-                    <h2>{{product.price}}</h2>
-                    <h2>{{product.currency}}</h2>
-                </div>
-                <div class="d-flex flex-column">
-                <button mat-raised-button class="btn btn-primary m-2" (click)="addProduct({product, cantidad: 1, priceconjunto: 0})">Añadir al carrito
-                    <mat-icon>add_shopping_cart</mat-icon>
-                </button>
-                <div class="d-flex">
-                    <button mat-raised-button class="w-25 m-1" color="warn" >
-                    <mat-icon>delete</mat-icon>
-                </button>
-                <button mat-raised-button class="w-25 m-1" color="primary" >
-                    <mat-icon>edit</mat-icon>
-                </button>
-            </div>
-            </div>
-            </div>
-        </mat-card>
-
-    </div>
-
+  <app-tiendacomp></app-tiendacomp>
 </div>

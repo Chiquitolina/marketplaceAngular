@@ -1,58 +1,31 @@
 <div class="container">
+  <div class="w-100 d-flex justify-content-end">
+    <h2 class="titulo">Inicio</h2>
+  </div>
 
-    <div class="w-100 d-flex titcontainer">
-        <h2 class="titulo">Inicio</h2>
-      </div>
+  <hr />
 
-    <div class="d-flex flex-column w-100 justify-content-center align-items-center">
-        <div class="text-center w-100 d-flex flex-column">
-            <h1 class="">Terapia basada en plantas</h1>
-            <h3 class="m-4">Nuestros productos contienen diferentes perfiles de cannabinoides para el tratamiento de diversas
-                patologías. Te
-                invitamos a explorar nuestro catálogo.</h3>
-        </div>
+  <div
+    class="d-flex flex-column w-100 justify-content-center align-items-center"
+  >
+    <div class="text-center w-100 d-flex flex-column" style="color: whitesmoke">
+      <h1 class="text-white">Terapia basada en plantas</h1>
+      <h3 class="m-4">
+        Nuestros productos contienen
+        <b style="color: #a3afd2">diferentes perfiles</b> de cannabinoides para
+        el tratamiento de diversas patologías. Te invitamos a explorar nuestro
+        catálogo.
+      </h3>
     </div>
+  </div>
 
-    <swiper-container>
-        <swiper-slide><img class="w-100 imgg" src="https://i.postimg.cc/zvrK5RdZ/banner1.png" alt=""></swiper-slide>
-        <swiper-slide><img class="w-100" src="https://www.40defiebre.com/wp-content/uploads/2012/10/carrusel_slider.png"
-                alt=""></swiper-slide>
-        <swiper-slide><img class="w-100" src="https://www.40defiebre.com/wp-content/uploads/2012/10/carrusel_slider.png"
-                alt=""></swiper-slide>
-    </swiper-container>
+  <div class="w-100 d-flex justify-content-center">
+    <img
+      class="w-100 imgg mt-4 mb-4"
+      src="https://i.ibb.co/chV2zhw/decd282f-5538-4ed8-9519-cc25c8642a91.jpg"
+      alt=""
+    />
+  </div>
 
-    <div class="row card-container w-100 d-flex justify-content-around mt-4">
-
-        <mat-card *ngFor="let product of database.data.products" class="col-md-4 text-center bg-white mt-3 mb-3 text-dark"
-            style="width: 18rem;">
-            <h2 class="mb-0">{{product.name}}</h2>
-            <h5>{{product.contenido}}</h5>
-            <div class="d-flex justify-content-center">
-                <img class="card-img-top" src="{{product.image}}" alt="Card image cap" >
-            </div>
-
-            <div class="card-body">
-                <div class="d-flex justify-content-center">
-                    <h2>{{product.price}}</h2>
-                    <h2>{{product.currency}}</h2>
-                </div>
-                <div class="d-flex flex-column">
-                    <button mat-raised-button class="btn btn-primary mb-1 m-2" (click)="addProduct({product, cantidad: 1, priceconjunto: 0})">Añadir al carrito
-                        <mat-icon>add_shopping_cart</mat-icon>
-                    </button>
-                    <div class="d-flex">
-                    <button mat-raised-button class="w-25 m-1" color="warn" >
-                    <mat-icon>delete</mat-icon>
-                </button>
-                <button mat-raised-button class="w-25 m-1" color="primary" >
-                    <mat-icon>edit</mat-icon>
-                </button>
-            </div>
-                </div>
-            </div>
-        </mat-card>
-
-    </div>
-
+  <app-tiendacomp></app-tiendacomp>
 </div>
-

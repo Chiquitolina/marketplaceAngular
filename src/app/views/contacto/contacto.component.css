@@ -1,7 +1,30 @@
-form {
-}
+form {}
 
 .titulo {
     font-size: 2.3rem;
     margin-top: 3rem;
+}
+
+.formcontenedor {
+    width: 100%;
+}
+
+mat-card {
+    width: 50%;
+    margin: 2rem;
+}
+
+/* Estilos para dispositivos móviles (ancho máximo de 767px) */
+@media only screen and (max-width: 767px) {
+
+
+    mat-card {
+        width: 100%;
+        margin: 2rem;
+    }
+
+    .formcontenedor {
+        width: 100%;
+    }
+
 }

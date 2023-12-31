@@ -1,96 +1,80 @@
 <div class="mat-fab">
   <button class="minifab" mat-mini-fab color="accent">
-    <b>{{this.cartSer.cart.items.length}}</b>
+    <b>{{ this.cartSer.cart.items.length }}</b>
   </button>
-  <button class="minifabempty" mat-mini-fab mat-mini-fab color="accent" (click)="cleanCartEvent(drawer)"
-    [disabled]="cartSer.cart.items.length == 0">
+  <button
+    class="minifabempty"
+    mat-mini-fab
+    mat-mini-fab
+    color="accent"
+    (click)="cleanCartEvent(drawer)"
+    [disabled]="cartSer.cart.items.length == 0"
+  >
     <mat-icon>remove_shopping_cart</mat-icon>
   </button>
-  <button (click)="drawer.toggle()" mat-fab color="accent" [disabled]="cartSer.cart.items.length == 0">
+  <button
+    (click)="drawer.toggle()"
+    mat-fab
+    color="accent"
+    [disabled]="cartSer.cart.items.length == 0"
+  >
     <mat-icon>shopping_cart</mat-icon>
   </button>
 </div>
-<nav class="navbar navbar-expand-lg bg-light" style="min-height: 7rem;">
-  <div class="container-fluid">
-    <img class="rounded" src="https://i.postimg.cc/d3ZsW-WRJ/logonora.png" alt="" style="width: 8rem;">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse w-100" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-around w-100 mt-5">
-        <li class="nav-item">
-          <a mat-raised-button color="basic" class="nav-link" aria-current="page">
-            <i class="bi bi-house-door-fill border rounded p-1"></i>
-            Inicio</a>
-        </li>
-        <li class="nav-item">
-          <a mat-raised-button color="basic" routerLink="/tienda" class="nav-link active" aria-current="page" href="#">
-            <i class="bi bi-shop border rounded p-1"></i>
-            Tienda</a>
-        </li>
-        <li class="nav-item">
-          <a mat-raised-button color="basic" routerLink="/analiticas" class="nav-link active" aria-current="page" href="#">
-            <i class="bi bi-clipboard2-data border rounded p-1"></i>
-            Analíticas</a>
-        </li>
-        <li class="nav-item">
-          <a mat-raised-button color="basic" routerLink="/nosotros" class="nav-link activE" aria-current="page" href="#">
-            <i class="bi bi-person-arms-up border rounded p-1"></i>
-            Nosotros</a>
-        </li>
-        <li class="nav-item">
-          <a mat-raised-button routerLink="/contacto" color="basic" class="nav-link active" aria-current="page" href="#">
-            <i class="bi bi-telephone border rounded p-1"></i>
-            Contacto</a>
-        </li>
-        <li class="nav-item">
-          <a mat-raised-button routerLink="/blog" color="basic" class="nav-link active" aria-current="page" href="#">Blog</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+<app-navbar></app-navbar>
 <mat-drawer-container autosize>
-
-  <mat-drawer #drawer mode="side" style="position: fixed; top: 10;">
+  <mat-drawer #drawer mode="side" style="position: fixed; top: 10">
     <mat-nav-list>
       <div class="d-flex align-items-center m-3 border-bottom">
-      <mat-icon>shopping_cart</mat-icon>
-      <h2 class="m-3">Mi carrito:</h2>
-    </div>  
+        <mat-icon>shopping_cart</mat-icon>
+        <h2 class="m-3">Mi carrito:</h2>
+      </div>
 
-      <div class="mt-3 d-flex flex-wrap justify-content-between align-items-center"
-        *ngFor="let itemcart of this.cartSer.cart.items">
-        
-        <div class="d-flex justify-content-center"> 
-          <img class="imgcartside" src="{{itemcart.product.image}}" alt=""> 
-          <button class="minifab b" mat-mini-fab color="accent"><b>{{itemcart.cantidad}}</b></button>
-
+      <div
+        class="mt-3 d-flex flex-wrap justify-content-between align-items-center"
+        *ngFor="let itemcart of this.cartSer.cart.items"
+      >
+        <div class="d-flex justify-content-center">
+          <img class="imgcartside" src="{{ itemcart.product.image }}" alt="" />
+          <button class="minifab b" mat-mini-fab color="accent">
+            <b>{{ itemcart.cantidad }}</b>
+          </button>
         </div>
-        <div class="d-flex flex-column text-start w-50"> 
-          <b>{{itemcart.product.name}}</b> 
-          {{itemcart.product.contenido}}
-          {{itemcart.priceconjunto}}
+        <div class="d-flex flex-column text-start w-50">
+          <b>{{ itemcart.product.name }}</b>
+          {{ itemcart.product.contenido }}
+          {{ itemcart.priceconjunto }}
         </div>
-        <button mat-raised-button color="warn" class="btn m-2" (click)="this.cartSer.removeItemFromCart(itemcart, drawer)"><mat-icon class="">delete</mat-icon></button>      
+        <button
+          mat-raised-button
+          color="warn"
+          class="btn m-2"
+          (click)="this.cartSer.removeItemFromCart(itemcart, drawer)"
+        >
+          <mat-icon class="">delete</mat-icon>
+        </button>
       </div>
       <div class="d-flex align-items-center w-100 justify-content-around mt-3">
         <div class="">
-        <h3 class="">Precio final:</h3>
-        <h2 class="">{{this.cartSer.cart.finalPrice.toFixed(2)}}</h2>
+          <h3 class="">Precio final:</h3>
+          <h2 class="">{{ this.cartSer.cart.finalPrice.toFixed(2) }}</h2>
+        </div>
+        <button
+          mat-raised-button
+          class="btn"
+          color="accent"
+          (click)="checkoutEvent(drawer)"
+        >
+          Checkout
+        </button>
       </div>
-        <button mat-raised-button class="btn" color="accent" (click)="checkoutEvent(drawer)">Checkout</button>
-      </div>
-
     </mat-nav-list>
   </mat-drawer>
 
-  <mat-drawer-content style="min-height: 100vh;">
-
+  <mat-drawer-content
+    style="min-height: 100vh; max-width: 100wh; background-color: #ecd7a6"
+  >
     <router-outlet> </router-outlet>
-
+    <app-footer></app-footer>
   </mat-drawer-content>
-
-
 </mat-drawer-container>
