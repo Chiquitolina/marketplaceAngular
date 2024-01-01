@@ -1,30 +1,67 @@
-import { Component, AfterViewInit, OnInit  } from '@angular/core';
+import { Component, AfterViewInit, OnInit } from '@angular/core';
 import { CartServiceService } from 'src/app/services/cart/cart-service.service';
-import { database, Database } from '../../data/data';  // Ajusta la ruta según tu estructura
+import { database, Database } from '../../data/data'; // Ajusta la ruta según tu estructura
 import { register } from 'swiper/element/bundle';
-import Swiper from 'swiper';  
+import Swiper from 'swiper';
 import { Product } from 'src/app/models/Products';
 import { CartItem } from 'src/app/models/CartItem';
-
+import {
+  trigger,
+  state,
+  animate,
+  style,
+  transition,
+} from '@angular/animations';
 
 // Registra Swiper como elemento personalizado
-register();   
+register();
 
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.component.html',
-  styleUrls: ['./inicio.component.css']
+  styleUrls: ['./inicio.component.css'],
+  animations: [
+    trigger('enterState', [
+      state(
+        'void',
+        style({
+          opacity: 0,
+        })
+      ),
+      transition(':enter', [
+        animate(
+          750,
+          style({
+            opacity: 1,
+          })
+        ),
+      ]),
+    ]),
+    trigger('enterStateTwo', [
+      state(
+        'void',
+        style({
+          opacity: 0,
+        })
+      ),
+      transition(':enter', [
+        animate(
+          1500,
+          style({
+            opacity: 1,
+          })
+        ),
+      ]),
+    ]),
+  ],
 })
 export class InicioComponent implements AfterViewInit, OnInit {
-
   database: Database = database;
 
-  constructor(private cartServ: CartServiceService) {
-
-  }
+  constructor(private cartServ: CartServiceService) {}
 
   addProduct(cartItem: CartItem) {
-    this.cartServ.addItemToCart(cartItem)
+    this.cartServ.addItemToCart(cartItem);
   }
 
   ngAfterViewInit() {
@@ -33,15 +70,14 @@ export class InicioComponent implements AfterViewInit, OnInit {
       spaceBetween: 10,
       navigation: {
         nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev'
+        prevEl: '.swiper-button-prev',
       },
       speed: 1000, // Velocidad de la animación en milisegundos
-      autoplay: true
+      autoplay: true,
     });
   }
-  
-  ngOnInit(): void {
-        console.log('Database:', this.database);
-  }
 
+  ngOnInit(): void {
+    console.log('Database:', this.database);
+  }
 }
