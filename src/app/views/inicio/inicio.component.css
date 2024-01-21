@@ -8,6 +8,10 @@ h1 {
   max-width: 100%;
 }
 
+img {
+  width: 30rem;
+}
+
 .expo {
   font-size: 6rem;
 }
@@ -19,6 +23,12 @@ h3 {
 
 .card {
   width: 44rem;
+}
+
+.besidenora {
+  border: 2px solid white;
+  border-radius: 19rem;
+  width: 19rem;
 }
 
 .imgg {
@@ -59,5 +69,8 @@ h3 {
     height: 12rem;
     width: 100%;
     border-radius: 1rem;
+  }
+  img {
+    width: 20rem;
   }
 }

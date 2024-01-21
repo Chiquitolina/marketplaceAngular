@@ -1,36 +1,52 @@
 <div class="container">
-
-    <div class="w-100 d-flex justify-content-around">
-
-        <button mat-raised-button class="buttonn">Gestionar productos</button>
-        <button mat-raised-button class="buttonn">Ventas</button>
-        <button mat-raised-button class="buttonn">Órdenes generadas</button>
-
-
+  <div class="w-100 d-flex justify-content-around">
+    <div class="d-flex flex-column">
+      <button mat-raised-button class="buttonn">Gestionar productos</button>
     </div>
-    <table class="table table-hover">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Precio</th>
-            <th scope="col">Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let product of this.productos; let i = index">
-            <th scope="row">{{i+1}}</th>
-            <td>{{product.name}}</td>
-            <td>{{product.price}}</td>
-            <td class="d-flex justify-content-around">
-                <button color="primary" mat-raised-button (click)="this.openDialog('0ms', '0ms', i)"><mat-icon>edit</mat-icon>
-                </button>
-                <button color="warn" mat-raised-button>
-                <mat-icon>delete_forever</mat-icon>
-            </button>
+    <button mat-raised-button class="buttonn">Ventas</button>
+    <button mat-raised-button class="buttonn">Órdenes generadas</button>
+  </div>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody class="border">
+      <tr *ngFor="let product of this.productos; let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>
+          {{ product.name }}
+          <button
+            *ngIf="product.name == ''"
+            mat-raised-button
+            (click)="this.openDialog('0ms', '0ms', this.productos.length - 1)"
+          >
+            Add Product
+          </button>
         </td>
-          </tr>
-        </tbody>
-      </table>
-   
+        <td>{{ product.price }}</td>
+        <td class="d-flex justify-content-around">
+          <button
+            color="primary"
+            mat-raised-button
+            (click)="this.openDialog('0ms', '0ms', i)"
+            [disabled]="product.name == ''"
+          >
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button
+            color="warn"
+            [disabled]="product.name == ''"
+            mat-raised-button
+          >
+            <mat-icon>delete_forever</mat-icon>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
