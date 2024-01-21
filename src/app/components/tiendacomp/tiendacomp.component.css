@@ -1,19 +1,17 @@
 .card {
-    width: 44rem;
+  width: 44rem;
 }
 
-
 .card-img-top {
-    width: 100%;
-    height: 14rem;
-    border-radius: 1rem;
-    margin: 0.5rem;
-    border: 2px solid white;
+  width: 100%;
+  height: 14rem;
+  border-radius: 1rem;
+  margin: 0.5rem;
+  border: 2px solid white;
 }
 
 .ratio {
-    position: absolute;
-    right: 0rem;
-    top: 3rem;
+  position: absolute;
+  right: 0rem;
+  top: 3rem;
 }
-
