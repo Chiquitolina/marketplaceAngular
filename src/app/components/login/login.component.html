@@ -1,15 +1,16 @@
 
 <div class="container">
 
-  <div class="w-100 d-flex">
+  <div class="w-100 d-flex justify-content-end">
       <h2 class="titulo">Admin</h2>
   </div>
+
+  <hr>
+
   <div class="w-100 d-flex justify-content-center">
-
-
       <mat-card class="bg-light w-75 m-4">
           <mat-card-content>
-            <form class=" d-flex flex-column w-100 bg-light justify-content-center align-items-center p-4">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class=" d-flex flex-column w-100 bg-light justify-content-center align-items-center p-4">
               <mat-form-field class="example-full-width w-50">
                 <input matInput placeholder="Email" [formControl]="emailFormControl" [errorStateMatcher]="matcher">
                 <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
@@ -20,15 +21,13 @@
                 </mat-error>
               </mat-form-field>
               <mat-form-field class="example-full-width  w-50">
-                <input color="accent" matInput placeholder="Password" [formControl]="emailFormControl"
+                <input color="accent" matInput placeholder="Password" [formControl]="passwordFormControl"
                   [errorStateMatcher]="matcher">
-                <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                <mat-error *ngIf="!passwordFormControl.hasError('required')">
                   Please enter a password
                 </mat-error>
-                <mat-error *ngIf="emailFormControl.hasError('required')">
-                  Password is <strong>required</strong>
-                </mat-error>
               </mat-form-field>
+              
               <button mat-raised-button class="mt-5  w-50">Login</button>
         
             </form>
