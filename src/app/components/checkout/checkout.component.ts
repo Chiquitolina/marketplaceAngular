@@ -46,7 +46,6 @@ export class CheckoutComponent implements OnInit {
 
   generateOrder() {
     this.responser = false;
-    console.log(this.cartSer.cart);
     this.paymentSer.createOrder(this.cartSer.cart).subscribe((response) => {
       this.responser = true;
       this.url = response.message;

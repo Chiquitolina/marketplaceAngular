@@ -3,6 +3,7 @@ import { ProductsService } from 'src/app/services/products/products.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
 import { EditProductComponent } from 'src/app/components/edit-product/edit-product.component';
+import { AddanalyticComponent } from 'src/app/components/addanalytic/addanalytic.component';
 
 export interface PeriodicElement {
   name: string;
@@ -18,46 +19,87 @@ export interface PeriodicElement {
 })
 export class AdminComponent implements OnInit {
   public productos: any = [];
-  public productosmas: any = [];
-  public postNewProduct: object = {};
 
-  constructor(private prodSer: ProductsService, public dialog: MatDialog) {}
+  constructor(
+    private prodSer: ProductsService,
+    public dialog: MatDialog,
+    public dialogAn: MatDialog
+  ) {}
 
-  async loadProducts() {
-    try {
-      this.productos = await this.prodSer.getProducts();
+  deleteProduct(product: any) {
+    this.prodSer.deleteProduct(product.id).subscribe({
+      next: (response) => {
+        console.log(response);
+        this.loadProducts();
+      },
+      error: (error) => {
+        console.error('Error eliminando el producto:', error);
+        // Puedes manejar el error como prefieras, por ejemplo, asignando un array vacío a productos
+        this.productos = [];
+      },
+    });
+  }
 
-      this.postNewProduct = {
-        id: this.productos[this.productos.length - 1].id + 1,
-        name: '',
-        description: '',
-        price: null,
-        currency: '',
-        image: '',
-        analitics: [],
-        contenido: '',
-        ratio: '',
-      };
+  loadProducts() {
+    this.prodSer.getProducts().subscribe({
+      next: (data) => {
+        this.productos = data; // Asigna los datos recibidos a la propiedad del componente
+      },
+      error: (error) => {
+        console.error('Error cargando productos:', error);
+        // Puedes manejar el error como prefieras, por ejemplo, asignando un array vacío a productos
+        this.productos = [];
+      },
+    });
+  }
 
-      this.productos.push(this.postNewProduct);
-
-      console.log(this.productos);
-    } catch (error) {
-      console.error('Error cargando productos:', error);
-    }
+  openDialogAnalytics(
+    enterAnimationDuration: string,
+    exitAnimationDuration: string,
+    i: number
+  ): void {
+    const dialogRef = this.dialogAn.open(AddanalyticComponent, {
+      width: '140%',
+      height: '80%',
+      data: this.productos[i], // Pasando el producto seleccionado al modal
+      enterAnimationDuration,
+      exitAnimationDuration,
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result === true) {
+        // Si el diálogo se cerró con un resultado 'true', significa que un producto fue editado exitosamente.
+        console.log('Producto editado, actualizando lista de productos...');
+        this.loadProducts(); // Vuelve a cargar los productos para reflejar los cambios
+      } else {
+        // Manejar otros casos, como cierre sin edición
+        console.log('Diálogo cerrado sin edición');
+      }
+    });
+    
   }
 
   openDialog(
     enterAnimationDuration: string,
     exitAnimationDuration: string,
-    i: number
+    index: number
   ): void {
-    this.dialog.open(EditProductComponent, {
+    const dialogRef = this.dialog.open(EditProductComponent, {
       width: '140%',
       height: '100%',
-      data: this.productos[i],
+      data: this.productos[index], // Pasando el producto seleccionado al modal
       enterAnimationDuration,
       exitAnimationDuration,
+    });
+    // Manejar el cierre del diálogo
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result === true) {
+        // Si el diálogo se cerró con un resultado 'true', significa que un producto fue editado exitosamente.
+        console.log('Producto editado, actualizando lista de productos...');
+        this.loadProducts(); // Vuelve a cargar los productos para reflejar los cambios
+      } else {
+        // Manejar otros casos, como cierre sin edición
+        console.log('Diálogo cerrado sin edición');
+      }
     });
   }
 

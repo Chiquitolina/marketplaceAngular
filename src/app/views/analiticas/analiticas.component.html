@@ -27,7 +27,7 @@
     <mat-accordion class="m-3">
       <mat-expansion-panel
         class=""
-        *ngFor="let product of database.data.products"
+        *ngFor="let product of products"
         (opened)="panelOpenState = true"
         (closed)="panelOpenState = false"
         style="min-height: 7rem"
@@ -44,64 +44,23 @@
                 color: black;
               "
             >
-              {{ product.name }}
+              <span>{{ product.name }} ({{product.analytics.length}})</span>
             </mat-panel-title>
             <mat-panel-description> </mat-panel-description>
           </div>
         </mat-expansion-panel-header>
         <mat-list>
-          <mat-list-item>
+          <mat-list-item *ngFor="let analytic of product.analytics">
             <mat-icon matListItemIcon style="color: black">folder</mat-icon>
             <div class="d-flex justify-content-between">
-              <div class="m-3"></div>
-              <a mat-raised-button class="m-3"
+              <div class="m-4 text-black">{{analytic.name}}</div>
+              <a mat-raised-button class="m-3" href="{{analytic.link}}" target="_blank"
                 ><mat-icon>cloud_download</mat-icon></a
               >
             </div>
           </mat-list-item>
-          <mat-divider></mat-divider>
-          <mat-list-item>
-            <mat-icon matListItemIcon style="color: black">folder</mat-icon>
-            <div class="d-flex justify-content-between">
-              <div class="m-3"></div>
-              <a mat-raised-button class="m-3"
-                ><mat-icon>cloud_download</mat-icon></a
-              >
-            </div>
-          </mat-list-item>
-          <mat-divider></mat-divider>
 
-          <mat-list-item>
-            <mat-icon matListItemIcon style="color: black">folder</mat-icon>
-            <div class="d-flex justify-content-between">
-              <div class="m-3"></div>
-              <a mat-raised-button class="m-3"
-                ><mat-icon>cloud_download</mat-icon></a
-              >
-            </div>
-          </mat-list-item>
           <mat-divider></mat-divider>
-
-          <mat-list-item>
-            <mat-icon matListItemIcon style="color: black">folder</mat-icon>
-            <div class="d-flex justify-content-between">
-              <div class="m-3"></div>
-              <a mat-raised-button class="m-3"
-                ><mat-icon>cloud_download</mat-icon></a
-              >
-            </div>
-          </mat-list-item>
-          <mat-divider></mat-divider>
-
-          <mat-list-item>
-            <mat-icon matListItemIcon style="color: black">folder</mat-icon>
-            <div class="d-flex justify-content-between">
-              <div class="m-3"></div>
-              <a mat-raised-button class="m-3"
-                ><mat-icon>cloud_download</mat-icon></a
-              >
-            </div>
-          </mat-list-item>
         </mat-list>
       </mat-expansion-panel>
     </mat-accordion>

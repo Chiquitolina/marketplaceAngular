@@ -35,7 +35,7 @@ import { MatListModule } from '@angular/material/list';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { AddanalyticComponent } from './addanalytic/addanalytic.component';
+import { AddanalyticComponent } from './components/addanalytic/addanalytic.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { CartbuttonsComponent } from './components/cartbuttons/cartbuttons.component';
 import { TiendacompComponent } from './components/tiendacomp/tiendacomp.component';

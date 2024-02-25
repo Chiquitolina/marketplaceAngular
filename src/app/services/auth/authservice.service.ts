@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import jwt_decode from 'jwt-decode';
+import { jwtDecode } from "jwt-decode";
 
 interface AuthResponse {
   token: string;
@@ -13,7 +13,7 @@ interface AuthResponse {
 
 export class AuthserviceService {
 
-  private authUrl = 'http://localhost:3000/admin/login'
+  private authUrl = 'http://nora.com.ar/admin/login'
 
   constructor(private http: HttpClient) { }
 
@@ -24,7 +24,7 @@ export class AuthserviceService {
   public isAuthenticated(): boolean {
     const token = localStorage.getItem('token');
     if (token) {
-      const decodedToken = jwt_decode<any>(token);
+      const decodedToken = jwtDecode<any>(token);
       const expirationDate = new Date(decodedToken.exp * 1000);
       return expirationDate > new Date();
     }

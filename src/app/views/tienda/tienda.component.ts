@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { CartServiceService } from 'src/app/services/cart/cart-service.service';
-import { database, Database } from '../../data/data';  // Ajusta la ruta según tu estructura
 import { CartItem } from 'src/app/models/CartItem';
 
 
@@ -11,7 +10,6 @@ import { CartItem } from 'src/app/models/CartItem';
 })
 export class TiendaComponent {
 
-  database: Database = database;
 
 
 }

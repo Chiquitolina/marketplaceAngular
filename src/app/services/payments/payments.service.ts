@@ -9,6 +9,7 @@ export class PaymentsService {
   constructor(private http: HttpClient) {}
 
   public createOrder(params: any): Observable<any> {
-    return this.http.post('https://nora.com.ar/create-order', params);
+    console.log(params)
+    return this.http.post('http://nora.com.ar/create-order', params);
   }
 }

@@ -1,0 +1,64 @@
+
+<mat-accordion class="m-3">
+  <mat-expansion-panel
+    class=""
+    (opened)="panelOpenState = true"
+    (closed)="panelOpenState = false"
+    style="min-height: 7rem"
+    class="w-100 bg-light"
+  >
+    <mat-expansion-panel-header class="">
+      <div class="d-flex w-100">
+        <mat-panel-title
+          class="mt-5"
+          style="
+            font-size: 1.7rem;
+            font-style: italic;
+            font-weight: 300;
+            color: black;
+          "
+        >
+        {{this.data.name}} ({{this.data.analytics.length}})
+        </mat-panel-title>
+        <mat-panel-description> </mat-panel-description>
+      </div>
+    </mat-expansion-panel-header>
+    <mat-list *ngFor="let analytic of this.data.analytics" class="">
+      <mat-list-item>
+        <mat-icon matListItemIcon style="color: black">folder</mat-icon>
+        <div class="d-flex justify-content-between align-items-center text-black border">
+          <div class="m-3">{{analytic.name}}</div>
+          <div>
+          <a mat-raised-button href="analytic.link" target="_blank" class="m-3"
+            ><mat-icon>cloud_download</mat-icon></a
+          >
+          <a mat-raised-button color="warn" class="m-3"
+          ><mat-icon>delete_forever</mat-icon></a
+        >
+      </div>
+        </div>
+      </mat-list-item>
+
+      <mat-divider></mat-divider>
+    </mat-list>
+  </mat-expansion-panel>
+</mat-accordion>
+
+<h2 class="text-white m-2">Añadir analítica</h2>
+
+<div class="w-100 d-flex justify-content-center">
+  <form [formGroup]="analyticForm" class="d-flex flex-column w-75">
+    <mat-form-field>
+      <mat-label>Nombre:</mat-label>
+      <input formControlName="name" matInput />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Link PDF</mat-label>
+      <input formControlName="link" matInput />
+    </mat-form-field>
+    <div>
+      <button class="btn m-3" color="accent" (click)="onSubmit()" mat-raised-button>Añadir analítica</button>
+      <button class="btn m-3" color="warn" (click)="closeDialog(true)" mat-raised-button>Cancelar</button>
+    </div>
+  </form>
+</div>

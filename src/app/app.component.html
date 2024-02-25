@@ -17,8 +17,10 @@
     mat-fab
     color="accent"
     [disabled]="cartSer.cart.items.length == 0"
-  >
-    <mat-icon>shopping_cart</mat-icon>
+
+    >
+    <mat-icon
+    >shopping_cart</mat-icon>
   </button>
 </div>
 <app-navbar></app-navbar>
@@ -57,7 +59,7 @@
       <div class="d-flex align-items-center w-100 justify-content-around mt-3">
         <div class="">
           <h3 class="">Precio final:</h3>
-          <h2 class="">{{ this.cartSer.cart.finalPrice.toFixed(2) }}</h2>
+          <h2 class="">{{ this.cartSer.cart.finalPrice }}</h2>
         </div>
         <button
           mat-raised-button

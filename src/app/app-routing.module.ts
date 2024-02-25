@@ -8,6 +8,7 @@ import { ContactoComponent } from './views/contacto/contacto.component';
 import { BlogComponent } from './views/blog/blog.component';
 import { LoginviewComponent } from './views/loginview/loginview.component';
 import { AdminComponent } from './views/admin/admin.component';
+import { AuthGuard } from './guards/authguard.guard';
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
@@ -17,7 +18,9 @@ const routes: Routes = [
   { path: 'contacto', component: ContactoComponent },
   { path: 'blog', component: BlogComponent },
   { path: 'login', component: LoginviewComponent },
-  { path: 'admin', component: AdminComponent }
+  { path: 'admin', 
+    component: AdminComponent,
+    canActivate: [AuthGuard] }
 ];
 
 @NgModule({

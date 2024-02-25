@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
 import { Cart } from 'src/app/models/Cart';
 import { CartItem } from 'src/app/models/CartItem';
 
@@ -10,6 +9,7 @@ export class CartServiceService {
   cart: Cart = {
     items: [],
     finalPrice: 0,
+    totalItems: 0
   };
 
   public findOneItemByName(nombre: string): boolean {
@@ -25,11 +25,13 @@ export class CartServiceService {
       const foundItem = this.cart.items.find((itemcart: CartItem) => {
         return itemcart.product.name === cartItem.product.name;
       });
-      foundItem ? foundItem.cantidad++ : 0;
-      this.cart.finalPrice += cartItem.product.price;
+      if (foundItem) {
+        foundItem.cantidad++;
+      }
+      this.cart.finalPrice = Number(this.cart.finalPrice) + Number(cartItem.product.price);
     } else {
       this.cart.items.push(cartItem);
-      this.cart.finalPrice += cartItem.product.price;
+      this.cart.finalPrice = Number(this.cart.finalPrice) + Number(cartItem.product.price);
     }
   }
 
@@ -50,6 +52,7 @@ export class CartServiceService {
     this.cart = {
       items: [],
       finalPrice: 0,
+      totalItems: 0
     };
   }
 }

@@ -1,6 +1,5 @@
 import { Component, AfterViewInit, OnInit } from '@angular/core';
 import { CartServiceService } from 'src/app/services/cart/cart-service.service';
-import { database, Database } from '../../data/data'; // Ajusta la ruta según tu estructura
 import { register } from 'swiper/element/bundle';
 import Swiper from 'swiper';
 import { Product } from 'src/app/models/Products';
@@ -56,13 +55,9 @@ register();
   ],
 })
 export class InicioComponent implements AfterViewInit, OnInit {
-  database: Database = database;
 
   constructor(private cartServ: CartServiceService) {}
 
-  addProduct(cartItem: CartItem) {
-    this.cartServ.addItemToCart(cartItem);
-  }
 
   ngAfterViewInit() {
     const mySwiper = new Swiper('.swiper-container', {
@@ -78,6 +73,5 @@ export class InicioComponent implements AfterViewInit, OnInit {
   }
 
   ngOnInit(): void {
-    console.log('Database:', this.database);
   }
 }
