@@ -12,7 +12,7 @@ export class ProductsService {
   baseUrl = 'https://nora.com.ar'
 
   deleteProduct(productId: number): Observable<any> {
-    return this.http.delete<any>('http://localhost:3000/delete-product', { body: { id: productId } }).pipe(
+    return this.http.delete<any>('https://nora.com.ar/delete-product', { body: { id: productId } }).pipe(
       catchError(error => {
         console.error('Error deleting product:', error);
         return throwError(() => error); // Maneja el error permitiendo que el componente que suscriba maneje el error.
@@ -21,7 +21,7 @@ export class ProductsService {
   }
 
   public getProducts(): Observable<any[]> {
-    return this.http.get<any[]>('http://localhost:3000/get-products').pipe(
+    return this.http.get<any[]>('https://nora.com.ar/get-products').pipe(
       tap(products => console.log(products)),
       catchError(error => {
         console.error('Error fetching products:', error);
@@ -31,7 +31,7 @@ export class ProductsService {
   }
 
   public editProduct(product: any): Observable<any> {
-    return this.http.put<any>('http://localhost:3000/edit-product', product).pipe(
+    return this.http.put<any>('https://nora.com.ar/edit-product', product).pipe(
       tap(response => console.log(response)),
       catchError(error => {
         console.error('Error updating product:', error);
@@ -41,7 +41,7 @@ export class ProductsService {
   }
 
   addProduct(product: any): Observable<any> {
-    return this.http.post<any>('http://localhost:3000/add-product', product).pipe(
+    return this.http.post<any>('https://nora.com.ar/add-product', product).pipe(
       tap((response : Response) => console.log("Producto añadido", response)),
       catchError(error => {
         console.error('Error añadiendo producto:', error);
@@ -51,7 +51,7 @@ export class ProductsService {
   }
 
   addAnalytic(product: any): Observable<any> {
-    return this.http.post<any>('http://localhost:3000/add-analytic', product).pipe(
+    return this.http.post<any>('https://nora.com.ar/add-analytic', product).pipe(
       tap((response : Response) => console.log("Añalítica añadida", response)),
       catchError(error => {
         console.error('Error añadiendo analítica:', error);
