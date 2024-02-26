@@ -13,7 +13,7 @@ interface AuthResponse {
 
 export class AuthserviceService {
 
-  private authUrl = 'http://nora.com.ar/admin/login'
+  private authUrl = 'https://nora.com.ar/admin/login'
 
   constructor(private http: HttpClient) { }
 
