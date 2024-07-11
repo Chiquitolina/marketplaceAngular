@@ -2,3 +2,15 @@ h2 {
     margin: 2rem;
     font-size: 2rem
 }
+
+@media only screen and (max-width: 767px) {
+
+   mat-form-field {
+    width: 100% !important;
+   }
+
+   input {
+    width: 100%;
+   }
+
+}

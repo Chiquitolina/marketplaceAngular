@@ -17,10 +17,8 @@
     mat-fab
     color="accent"
     [disabled]="cartSer.cart.items.length == 0"
-
-    >
-    <mat-icon
-    >shopping_cart</mat-icon>
+  >
+    <mat-icon>shopping_cart</mat-icon>
   </button>
 </div>
 <app-navbar></app-navbar>
@@ -51,7 +49,7 @@
           mat-raised-button
           color="warn"
           class="btn m-2"
-          (click)="this.cartSer.removeItemFromCart(itemcart, drawer)"
+          (click)="removeItem(itemcart, drawer, itemcart.product.name)"
         >
           <mat-icon class="">delete</mat-icon>
         </button>

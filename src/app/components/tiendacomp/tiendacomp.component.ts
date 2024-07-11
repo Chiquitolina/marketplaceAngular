@@ -3,41 +3,48 @@ import { Component, OnInit } from '@angular/core';
 import { CartServiceService } from 'src/app/services/cart/cart-service.service';
 import { CartItem } from 'src/app/models/CartItem';
 import { ProductsService } from 'src/app/services/products/products.service';
+import { AlertsService } from 'src/app/utils/alerts/alerts.service';
 
 @Component({
   selector: 'app-tiendacomp',
   templateUrl: './tiendacomp.component.html',
-  styleUrls: ['./tiendacomp.component.css']
+  styleUrls: ['./tiendacomp.component.css'],
 })
 export class TiendacompComponent implements OnInit {
-
- // database: Database = database;
-
   products: any[] = [];
 
-  constructor(private cartServ: CartServiceService,
-              private prodSer:ProductsService) {
-    
-  }
+  constructor(
+    private cartServ: CartServiceService,
+    private prodSer: ProductsService,
+    private alertSer: AlertsService
+  ) {}
+
+  isLoading: boolean = true
 
   loadProducts() {
     this.prodSer.getProducts().subscribe(
-      products => {
+      (products) => {
         this.products = products;
+        this.isLoading = false
       },
-      error => {
+      (error) => {
         console.error('Error fetching products:', error);
-        // Aquí puedes manejar el error, como mostrar un mensaje de error al usuario
       }
     );
   }
 
-  addProduct(cartItem: CartItem) {
-    this.cartServ.addItemToCart(cartItem)
+  addProduct(cartItem: CartItem, productname: string) {
+    this.cartServ.addItemToCart(cartItem);
+    this.alertSer.showAlert(
+      `¡Producto ${productname} añadido al carrito correctamente!`,
+      'Cerrar',
+      3000,
+      'snackbar-success',
+      productname
+    );
   }
 
   ngOnInit(): void {
     this.loadProducts(); // Llama a la función loadProducts() cuando se inicialice el componente
   }
-
 }

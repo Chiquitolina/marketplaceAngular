@@ -8,47 +8,38 @@
     <mat-card class="bg-light">
       <mat-card-content>
         <div class="formcontenedor">
-          <form action="" class="d-flex flex-column mt-4 bg-light">
+          <form action="" [formGroup]="emailForm" class="d-flex flex-column mt-4 bg-light">
             <mat-form-field class="example-full-width">
               <input
                 matInput
                 placeholder="Email"
-                [formControl]="emailFormControl"
+                formControlName="from"
                 [errorStateMatcher]="matcher"
               />
-              <mat-error *ngIf="!emailFormControl.hasError('required')">
-                Please enter a valid email address
-              </mat-error>
-              <mat-error *ngIf="emailFormControl.hasError('required')">
-                Email is <strong>required</strong>
-              </mat-error>
+
             </mat-form-field>
             <mat-form-field class="example-full-width">
               <input
                 matInput
                 placeholder="Nombre"
-                [formControl]="nombreFormControl"
+                formControlName="subject"
                 [errorStateMatcher]="matcher"
               />
 
-              <mat-error *ngIf="nombreFormControl.hasError('required')">
-                Nombre is <strong>required</strong>
-              </mat-error>
+ 
             </mat-form-field>
             <mat-form-field class="example-full-width" color="accent">
               <textarea
-                [formControl]="mensajeFormControl"
+                formControlName="mail"
                 matInput
                 placeholder="Mensaje"
                 rows="5"
               ></textarea>
 
-              <mat-error *ngIf="mensajeFormControl.hasError('required')">
-                Mensaje is <strong>required</strong>
-              </mat-error>
+ 
             </mat-form-field>
             <div class="w-100 d-flex justify-content-center">
-              <button disabled class="w-50 m-3" mat-raised-button>
+              <button class="w-50 m-3" mat-raised-button>
                 Enviar
               </button>
             </div>

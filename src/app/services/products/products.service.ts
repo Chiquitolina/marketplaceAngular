@@ -9,54 +9,54 @@ import { catchError, tap } from 'rxjs/operators';
 export class ProductsService {
   constructor(private http: HttpClient) {}
 
-  baseUrl = 'https://nora.com.ar'
+  baseUrl = 'http://localhost:3000';
 
-  deleteProduct(productId: number): Observable<any> {
-    return this.http.delete<any>('https://nora.com.ar/delete-product', { body: { id: productId } }).pipe(
-      catchError(error => {
-        console.error('Error deleting product:', error);
-        return throwError(() => error); // Maneja el error permitiendo que el componente que suscriba maneje el error.
+  public deleteProduct(productId: number): Observable<any> {
+    return this.http
+      .delete<any>(`${this.baseUrl}/delete-product`, {
+        body: { id: productId },
       })
-    );
+      .pipe(
+        catchError((error) => {
+          console.error('Error deleting product:', error);
+          return throwError(() => error);
+        })
+      );
   }
 
   public getProducts(): Observable<any[]> {
-    return this.http.get<any[]>('https://nora.com.ar/get-products').pipe(
-      tap(products => console.log(products)),
-      catchError(error => {
+    return this.http.get<any[]>(`${this.baseUrl}/get-products`).pipe(
+      tap((products) => console.log(products)),
+      catchError((error) => {
         console.error('Error fetching products:', error);
-        return throwError(() => error); // Maneja el error permitiendo que el componente que suscriba maneje el error.
+        return throwError(() => error);
       })
     );
   }
 
   public editProduct(product: any): Observable<any> {
-    return this.http.put<any>('https://nora.com.ar/edit-product', product).pipe(
-      tap(response => console.log(response)),
-      catchError(error => {
-        console.error('Error updating product:', error);
-        return throwError(() => error); // Maneja el error permitiendo que el componente que suscriba maneje el error.
-      })
-    );
+    return this.http
+      .put<any>(`${this.baseUrl}/edit-product`, product)
+      .pipe(
+        tap((response) => console.log(response)),
+        catchError((error) => {
+          console.error('Error updating product:', error);
+          return throwError(() => error);
+        })
+      );
   }
 
-  addProduct(product: any): Observable<any> {
-    return this.http.post<any>('https://nora.com.ar/add-product', product).pipe(
-      tap((response : Response) => console.log("Producto añadido", response)),
-      catchError(error => {
-        console.error('Error añadiendo producto:', error);
-        return throwError(() => error);
-      })
-    );
+  public addProduct(product: any): Observable<any> {
+    return this.http.post<any>(`${this.baseUrl}/add-product`, product);
   }
 
-  addAnalytic(product: any): Observable<any> {
-    return this.http.post<any>('https://nora.com.ar/add-analytic', product).pipe(
-      tap((response : Response) => console.log("Añalítica añadida", response)),
-      catchError(error => {
+  public addAnalytic(product: any): Observable<any> {
+    return this.http.post<any>(`${this.baseUrl}/add-analytic`, product).pipe(
+      tap((response: Response) => console.log('Añalítica añadida', response)),
+      catchError((error) => {
         console.error('Error añadiendo analítica:', error);
         return throwError(() => error);
       })
     );
-  }  
+  }
 }

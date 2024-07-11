@@ -7,11 +7,14 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatStepperModule } from '@angular/material/stepper';
+import {MatSelectModule} from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
-import { MatSort, MatSortModule, SortDirection } from '@angular/material/sort';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -44,6 +47,8 @@ import { LoginComponent } from './components/login/login.component';
 import { LoginviewComponent } from './views/loginview/loginview.component';
 import { AdminComponent } from './views/admin/admin.component';
 import { EditProductComponent } from './components/edit-product/edit-product.component';
+import {MatMenuModule} from '@angular/material/menu';
+
 
 @NgModule({
   declarations: [
@@ -88,6 +93,10 @@ import { EditProductComponent } from './components/edit-product/edit-product.com
     MatFormFieldModule,
     MatPaginatorModule,
     MatProgressSpinnerModule,
+    MatSelectModule,
+    MatCheckboxModule,
+    MatMenuModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent],

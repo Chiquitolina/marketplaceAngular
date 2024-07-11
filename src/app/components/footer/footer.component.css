@@ -1,4 +1,6 @@
 
+@import url('../../../styles/main.css');
+
 footer {
   background: whitesmoke;
   color: #aaa;
@@ -59,11 +61,6 @@ footer .img-thumbnail {
 
 footer .copyright {
   padding: 15px 0;
-  background: #333;
   margin-top: 20px;
   font-size: 15px;
-}
-
-footer .copyright span {
-  color: #0894d1;
 }

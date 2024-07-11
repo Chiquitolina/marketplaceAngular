@@ -1,0 +1,7 @@
+@import url('variables.css');
+
+/* footer */
+
+.copyright {
+    background-color: var(--background-dark);
+}

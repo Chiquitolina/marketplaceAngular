@@ -1,7 +1,19 @@
 <div class="container">
-  <div class="w-100 d-flex justify-content-around">
-    <!-- Botones Comentados -->
-  </div>
+  <div class="w-50 mt-3 d-flex border border-white rounded">
+    <button class="" color="basic" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <span>Productos</span>
+      </button>
+      <button mat-menu-item>
+        <span>Ventas</span>
+      </button>
+    </mat-menu>
+    
+    <h2 class=" m-2">Panel de administración</h2>
+    </div>
   <table class="table table-hover mt-3">
     <thead>
       <tr>

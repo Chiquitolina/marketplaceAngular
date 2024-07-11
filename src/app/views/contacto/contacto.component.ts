@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
+import {FormControl, FormGroupDirective, NgForm, FormGroup, FormControlDirective} from '@angular/forms';
 import {ErrorStateMatcher} from '@angular/material/core';
+import { from } from 'rxjs';
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -16,18 +17,16 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 export class ContactoComponent {
 
-  emailFormControl = new FormControl('', [
-    Validators.required,
-    Validators.email,
-  ]);
+  emailForm: FormGroup; // Declaración del formulario
 
-  nombreFormControl = new FormControl('', [
-    Validators.required,
-  ]);
+  constructor() {
+    this.emailForm = new FormGroup({
+      from: new FormControl(''),
+      subject: new FormControl(''),
+      mail: new FormControl('')
+    })
+  }
 
-  mensajeFormControl = new FormControl('', [
-    Validators.required,
-  ]);
 
   matcher = new MyErrorStateMatcher();
 

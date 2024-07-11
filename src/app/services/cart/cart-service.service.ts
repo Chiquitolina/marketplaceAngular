@@ -9,50 +9,44 @@ export class CartServiceService {
   cart: Cart = {
     items: [],
     finalPrice: 0,
-    totalItems: 0
+    totalItems: 0,
   };
 
-  public findOneItemByName(nombre: string): boolean {
-    const foundItem = this.cart.items.find((itemcart: CartItem) => {
-      return itemcart.product.name === nombre;
-    });
+  public addItemToCart(cartItem: CartItem): boolean {
+    const foundItem = this.cart.items.find(
+      (item) => item.product.name === cartItem.product.name
+    );
 
-    return foundItem ? true : false;
-  }
-
-  public addItemToCart(cartItem: CartItem): void {
-    if (this.findOneItemByName(cartItem.product.name)) {
-      const foundItem = this.cart.items.find((itemcart: CartItem) => {
-        return itemcart.product.name === cartItem.product.name;
-      });
-      if (foundItem) {
-        foundItem.cantidad++;
-      }
-      this.cart.finalPrice = Number(this.cart.finalPrice) + Number(cartItem.product.price);
+    if (foundItem) {
+      foundItem.cantidad++;
     } else {
       this.cart.items.push(cartItem);
-      this.cart.finalPrice = Number(this.cart.finalPrice) + Number(cartItem.product.price);
     }
+    this.cart.finalPrice += Number(cartItem.product.price);
+    return !!foundItem;
   }
 
-  public removeItemFromCart(itemcart: CartItem, side?: any): void {
-    const itemToRemove = this.cart.items.find((item: CartItem) => {
-      item.product.name == itemcart.product.name;
-    });
-    const indexItem = this.cart.items.findIndex((item: CartItem) => {
-      item == itemToRemove;
-    });
-    this.cart.items.splice(indexItem, 1);
-    this.cart.finalPrice =
-      this.cart.finalPrice - itemcart.product.price * itemcart.cantidad;
-    this.cart.items.length == 0 ? side.close() : 0;
+  public removeItemFromCart(itemcart: CartItem, side?: any): boolean {
+    const indexItem = this.cart.items.findIndex(
+      (item) => item.product.name === itemcart.product.name
+    );
+
+    if (indexItem !== -1) {
+      this.cart.items.splice(indexItem, 1);
+      this.cart.finalPrice -= itemcart.product.price * itemcart.cantidad;
+      if (this.cart.items.length === 0 && side) {
+        side.close();
+      }
+      return true;
+    }
+    return false;
   }
 
   public cleanCart(): void {
     this.cart = {
       items: [],
       finalPrice: 0,
-      totalItems: 0
+      totalItems: 0,
     };
   }
 }
