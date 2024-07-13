@@ -6,7 +6,7 @@
       class="col-md-4 text-center mt-3 mb-3 text-dark"
       style="width: 18rem; background-color: whitesmoke"
     >
-      <h2 class="mb-0">{{ product.name }}</h2>
+      <h2 class="title-product">{{ product.name }}</h2>
       <hr />
       <button class="ratio" *ngIf="product.ratio" mat-fab color="accent">
         <b><p class="m-0 mt-2">Ratio</p></b>
@@ -20,9 +20,9 @@
         />
       </div>
 
-      <div class="card-body">
-        <div style="min-height: 7rem">
-          <p class="card-text">{{ product.description }}</p>
+      <div class="card-body"> 
+        <div style=" height: 3rem; display: flex; align-items: center; justify-content: center">
+          <p class="card-text">{{ product.shortdescription }}</p>
         </div>
         <div
           class="d-flex justify-content-center w-100"

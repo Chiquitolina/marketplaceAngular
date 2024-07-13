@@ -1,12 +1,27 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--background-light);
+  font-family: var(--font-family-base);
+  margin: 0;
+}
+
 .card {
-  width: 44rem;
+  width: 18rem;
+  height: 30rem;
+  margin-bottom: 1rem;
+}
+
+.card-front {
+  background-color: var(--background-primary);
 }
 
 .card-img-top {
   width: 100%;
   height: 14rem;
   border-radius: 1rem;
-  margin: 0.5rem;
   border: 2px solid white;
 }
 
@@ -20,10 +35,18 @@
   --mdc-snackbar-container-color: green !important;
   --mdc-snackbar-supporting-text-color: white !important;
   --mat-mdc-snack-bar-button-color: white !important;
-  white-space: pre-wrap
+  white-space: pre-wrap;
 }
 
 .snackbar-error {
-  background-color: #F44336 !important  ; /* Rojo */
+  background-color: #F44336 !important; /* Rojo */
   color: #FFFFFF; /* Blanco */
+}
+
+.title-product {
+  font-size: medium;
+}
+
+button {
+  cursor: pointer;
 }
