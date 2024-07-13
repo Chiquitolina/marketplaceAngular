@@ -4,7 +4,8 @@
     <mat-card
       *ngFor="let product of products"
       class="col-md-4 text-center mt-3 mb-3 text-dark"
-      style="width: 18rem; background-color: whitesmoke"
+      style="width: 18rem; background-color: whitesmoke; cursor: pointer;"
+      [routerLink]="['/product', product.id]"
     >
       <h2 class="title-product">{{ product.name }}</h2>
       <hr />

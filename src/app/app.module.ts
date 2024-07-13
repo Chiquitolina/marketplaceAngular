@@ -48,7 +48,7 @@ import { LoginviewComponent } from './views/loginview/loginview.component';
 import { AdminComponent } from './views/admin/admin.component';
 import { EditProductComponent } from './components/edit-product/edit-product.component';
 import {MatMenuModule} from '@angular/material/menu';
-import { ProductselectedComponent } from './productselected/productselected.component';
+import { ProductselectedComponent } from './views/productselected/productselected.component';
 
 
 @NgModule({
