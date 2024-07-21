@@ -1,12 +1,14 @@
 <div class="w-100 d-flex justify-content-center">
   <mat-spinner *ngIf="isLoading"></mat-spinner>
-  <div class="row card-container w-100 d-flex justify-content-around mt-4">
+  <div
+    [@enterState]="true"
+    class="row card-container w-100 d-flex justify-content-around mt-4"
+  >
     <mat-card
       *ngFor="let product of products"
-      class="col-md-4 text-center mt-3 mb-3 text-dark"
-      style="width: 18rem; background-color: whitesmoke"
+      class="col-xl-3 col-md-4 col-sm-5 text-center m-2 text-dark"
     >
-      <h2 class="mb-0">{{ product.name }}</h2>
+      <h2 class="title-product">{{ product.name }}</h2>
       <hr />
       <button class="ratio" *ngIf="product.ratio" mat-fab color="accent">
         <b><p class="m-0 mt-2">Ratio</p></b>
@@ -14,36 +16,30 @@
       </button>
       <div class="d-flex justify-content-center">
         <img
-          class="card-img-top img-hover-zoom"
+          class="card-img-top"
           src="{{ product.image }}"
           alt="Card image cap"
+          [routerLink]="['/product', product.id]"
         />
       </div>
 
       <div class="card-body">
-        <div style="min-height: 7rem">
-          <p class="card-text">{{ product.description }}</p>
+        <div class="card-details">
+          <p class="card-text text-secondary">{{ product.shortdescription }}</p>
         </div>
         <div
-          class="d-flex justify-content-center w-100"
-          style="
-            border-radius: 3rem;
-            border: 3px solid white;
-            background-color: whitesmoke;
+          class="d-flex justify-content-center w-100 mb-3 card-product-price"
+        >
+          <h2 class="m-1">$<b>{{ product.price }}</b></h2>
+        </div>
+        <a
+          href="#"
+          (click)="
+            openDialog('0ms', '0ms', product.sizes); $event.preventDefault()
           "
         >
-          <h2 class="m-1">${{ product.price }}</h2>
-        </div>
-        <div class="d-flex flex-column">
-          <button
-            mat-raised-button
-            class="btn btn-primary m-2"
-            (click)="addProduct({product, cantidad: 1, priceconjunto: 0}, product.name)"
-          >
-            Añadir al carrito
-            <mat-icon>add_shopping_cart</mat-icon>
-          </button>
-        </div>
+          <p class="mb-3">Disponibilidad de talles</p>
+        </a>
       </div>
     </mat-card>
   </div>

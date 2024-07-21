@@ -1,3 +1,5 @@
+
+
 .card {
   width: 44rem;
 }
@@ -9,7 +11,6 @@
 }
 
 .titulo {
-  font-size: 2.3rem;
   margin-top: 3rem;
   margin-left: 3rem;
 }
@@ -27,3 +28,36 @@
   left: 2rem;
   z-index: 1000;
 }
+
+h2 {
+  font-family: "Anton SC", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 3rem;
+}
+
+h4 {
+  cursor: pointer;
+}
+
+h1 {
+  font-family: "Anton SC", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
+}
+
+mat-drawer-content {
+  min-height: 100vh; 
+  max-width: 100wh; 
+  background-color: white;
+}
+
+mat-expansion-panel {
+  background-color: white;
+}
+
+mat-panel-title,mat-panel-description {
+  color: black;
+}
+

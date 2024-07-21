@@ -23,7 +23,7 @@
 </div>
 <app-navbar></app-navbar>
 <mat-drawer-container autosize>
-  <mat-drawer #drawer mode="side" style="position: fixed; top: 10">
+  <mat-drawer #drawer mode="side" position="end">
     <mat-nav-list>
       <div class="d-flex align-items-center m-3 border-bottom">
         <mat-icon>shopping_cart</mat-icon>
@@ -72,7 +72,7 @@
   </mat-drawer>
 
   <mat-drawer-content
-    style="min-height: 100vh; max-width: 100wh; background-color: #ecd7a6"
+    style="min-height: 100vh; max-width: 100wh; background-color:white"
   >
     <router-outlet> </router-outlet>
     <app-footer></app-footer>

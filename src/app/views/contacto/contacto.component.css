@@ -14,6 +14,13 @@ mat-card {
     margin: 2rem;
 }
 
+h2 {
+    font-family: "Anton SC", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 3rem;
+  }
+
 /* Estilos para dispositivos móviles (ancho máximo de 767px) */
 @media only screen and (max-width: 767px) {
 

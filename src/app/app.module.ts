@@ -14,6 +14,12 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+  
+
+
 
 
 import { HttpClientModule } from '@angular/common/http';
@@ -31,9 +37,9 @@ import { NosotrosComponent } from './views/nosotros/nosotros.component';
 import { ContactoComponent } from './views/contacto/contacto.component';
 import { BlogComponent } from './views/blog/blog.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
+import { ProductselectedComponent } from './views/ProductSelected/productselected.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FooterComponent } from './components/footer/footer.component';
-import { CartDialogComponent } from './components/cart-dialog/cart-dialog.component';
 import { MatListModule } from '@angular/material/list';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -61,7 +67,6 @@ import {MatMenuModule} from '@angular/material/menu';
     BlogComponent,
     ProductCardComponent,
     FooterComponent,
-    CartDialogComponent,
     CheckoutComponent,
     AddanalyticComponent,
     CartbuttonsComponent,
@@ -71,6 +76,7 @@ import {MatMenuModule} from '@angular/material/menu';
     LoginviewComponent,
     AdminComponent,
     EditProductComponent,
+    ProductselectedComponent
   ],
   imports: [
     BrowserModule,
@@ -96,7 +102,10 @@ import {MatMenuModule} from '@angular/material/menu';
     MatSelectModule,
     MatCheckboxModule,
     MatMenuModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatDividerModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent],

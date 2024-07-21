@@ -1,0 +1,43 @@
+<div class="container text-black">
+  <div class="row m-2">
+    <div class="col-xl-6 col-md-6">
+      <div class="row">
+        <div class="col-xl-4 col-md-4">
+          <div *ngFor="let item of product?.miniimgs">
+            <img class="w-75 rounded mb-2" src="{{ item }}" alt="" />
+          </div>
+        </div>
+        <div class="col-xl-8 col-md-8">
+          <img class="w-100 rounded" src="{{ product?.image }}" alt="" />
+          <button
+            mat-raised-button
+            class="btn btn-primary w-100 mt-2 mb-2"
+            (click)="addProduct({product, cantidad: 1, priceconjunto: 0}, product.name)"
+          >
+            <b>Añadir al carrito</b>
+            <mat-icon>add_shopping_cart</mat-icon>
+          </button>
+          <p>
+            {{ product?.description }}
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-6 col-md-6">
+      <div class="row">
+        <h2>{{ product?.name }}</h2>
+        <h4 class="text-secondary">{{ product?.shortdescription }}</h4>
+        <h4>
+          <b>${{ product?.price }}</b>
+        </h4>
+        <div
+          class="border text-center col-xl-3 p-2 rounded m-1 size"
+          *ngFor="let size of product?.sizes"
+          [ngClass]="{ noAvailableSize: size.quantity === 0 }"
+        >
+          <span>{{ size.size }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

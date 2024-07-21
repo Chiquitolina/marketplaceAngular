@@ -1,0 +1,11 @@
+.noAvailableSize {
+    background-color: grey;
+    cursor:not-allowed;
+  }
+
+.size:hover:not(.noAvailableSize) {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+

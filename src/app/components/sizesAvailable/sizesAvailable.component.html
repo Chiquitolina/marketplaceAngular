@@ -1,0 +1,11 @@
+<div class="container h-100 bg-white text-dark">
+  <div class="row d-flex justify-content-center align-items-center">
+    <h2 class="m-2">Notificarme sobre mi talle:</h2>
+    <div
+      class="border m-1 rounded w-25 p-2 text-center size "
+      *ngFor="let size of data"
+    >
+      <div>{{ size.size }}</div>
+    </div>
+  </div>
+</div>

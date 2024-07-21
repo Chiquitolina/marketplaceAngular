@@ -9,6 +9,8 @@ import { BlogComponent } from './views/blog/blog.component';
 import { LoginviewComponent } from './views/loginview/loginview.component';
 import { AdminComponent } from './views/admin/admin.component';
 import { AuthGuard } from './guards/authguard.guard';
+import { ProductselectedComponent } from './views/ProductSelected/productselected.component';
+
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
@@ -20,7 +22,8 @@ const routes: Routes = [
   { path: 'login', component: LoginviewComponent },
   { path: 'admin', 
     component: AdminComponent,
-    canActivate: [AuthGuard] }
+    canActivate: [AuthGuard] },
+  {path: 'product/:id', component: ProductselectedComponent}
 ];
 
 @NgModule({

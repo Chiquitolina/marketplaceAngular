@@ -1,0 +1,4 @@
+.noAvailableSize {
+    background-color: grey;
+    cursor:not-allowed;
+  }

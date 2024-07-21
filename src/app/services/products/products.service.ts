@@ -46,6 +46,11 @@ export class ProductsService {
       );
   }
 
+  public getProductById(id: string): Observable<any> {
+    const url = `${this.baseUrl}/get-product-by-id/${id}`;
+    return this.http.get<any>(url);
+  }
+
   public addProduct(product: any): Observable<any> {
     return this.http.post<any>(`${this.baseUrl}/add-product`, product);
   }
