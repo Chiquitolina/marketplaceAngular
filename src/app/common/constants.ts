@@ -6,8 +6,8 @@ export interface ProductCategory {
 }
 
 export enum Categories {
-    CALZADOS = 'calzados',
-    ROPA = 'ropa'
+    CALZADOS = 'Calzados',
+    ROPA = 'Ropa'
 }
 
 export enum FilterOptions {
@@ -20,7 +20,8 @@ export enum FilterOptions {
 export enum AccordionFilters {
     SALE = 'Sale',
     SIZE = 'Size',
-    CATEGORIES = 'Categories'
+    CATEGORIES = 'Categories',
+    PRICES = 'Prices'
 }
 
 export interface AccordionFilter {
@@ -44,8 +45,9 @@ export const FILTER_OPTIONS_ARRAY = [
 
 export const ACCORDION_FILTERS: AccordionFilter[] = [
     { name: AccordionFilters.SALE, label: 'Sale', discounts: [20, 30, 40, 50] },
+    { name: AccordionFilters.CATEGORIES, label: 'Categories', categories: Object.values(Categories) },
+    { name: AccordionFilters.PRICES, label: 'Price'},
     { name: AccordionFilters.SIZE, label: 'Size' },
-    { name: AccordionFilters.CATEGORIES, label: 'Categories', categories: Object.values(Categories) }
 ];
 
 export const STORE_NAVBAR_MENU = [

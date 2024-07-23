@@ -15,10 +15,10 @@ import { ProductselectedComponent } from './views/ProductSelected/productselecte
 const routes: Routes = [
   { path: '', component: InicioComponent },
   { path: 'tienda', component: TiendaComponent },
-  { path: 'analiticas', component: AnaliticasComponent },
+  { path: 'tienda/:gender', component: TiendaComponent },
+  { path: 'tienda/:gender/:categorie', component: TiendaComponent },
   { path: 'nosotros', component: NosotrosComponent },
   { path: 'contacto', component: ContactoComponent },
-  { path: 'blog', component: BlogComponent },
   { path: 'login', component: LoginviewComponent },
   { path: 'admin', 
     component: AdminComponent,

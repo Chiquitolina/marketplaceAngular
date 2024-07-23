@@ -24,8 +24,21 @@
           </mat-panel-description>
         </mat-expansion-panel-header>
         <ng-container *ngIf="item.name === 'Sale'">
-          <mat-checkbox class="border">
-            <span class="text-black"></span>
+          <mat-checkbox *ngFor="let discount of item.discounts" class="w-100">
+            <span class="text-black">{{discount}}%</span>
+          </mat-checkbox>
+        </ng-container>
+        <ng-container *ngIf="item.name === 'Categories'">
+          <mat-checkbox *ngFor="let categorie of item.categories" class="w-100">
+            <span class="text-black">{{categorie}}</span>
+          </mat-checkbox>
+        </ng-container>
+        <ng-container *ngIf="item.name === 'Prices'">
+          <mat-checkbox class="w-100">
+            <mat-slider class="w-100" min="200" max="500000" color="accent">
+              <input value="0" matSliderStartThumb>
+              <input value="400" matSliderEndThumb>
+            </mat-slider>
           </mat-checkbox>
         </ng-container>
       </mat-expansion-panel>

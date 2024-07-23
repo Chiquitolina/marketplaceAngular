@@ -44,7 +44,7 @@ h1 {
   font-family: "Anton SC", sans-serif;
   font-weight: 400;
   font-style: normal;
-
+  margin-left: 0.50rem;
 }
 
 mat-drawer-content {
@@ -54,10 +54,18 @@ mat-drawer-content {
 }
 
 mat-expansion-panel {
-  background-color: white;
+  background-color: whitesmoke;
 }
 
 mat-panel-title,mat-panel-description {
   color: black;
 }
+
+mat-slider {
+  width: 3000px;
+}
+
+
+
+
 

@@ -1,3 +1,5 @@
+* {}
+
 .noAvailableSize {
     background-color: grey;
     cursor:not-allowed;
@@ -9,3 +11,26 @@
     cursor: pointer;
 }
 
+.cuotas-cartel {
+    height: 4rem;
+}
+
+@media (max-width: 576px) {
+
+    .miniimgs {
+        display: none;
+    }
+
+    .size {
+        width: 20%;
+    }
+
+    .div-half-one {
+        width: 100%;
+    }
+
+    .div-half-two {
+        width: 100%;
+    }
+
+}

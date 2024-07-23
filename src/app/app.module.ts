@@ -17,10 +17,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-  
-
-
-
+import {MatSlider, MatSliderModule} from '@angular/material/slider';
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -105,7 +102,8 @@ import {MatMenuModule} from '@angular/material/menu';
     MatSnackBarModule,
     MatDividerModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent],

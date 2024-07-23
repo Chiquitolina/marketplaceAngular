@@ -21,7 +21,6 @@
     <mat-icon>shopping_cart</mat-icon>
   </button>
 </div>
-<app-navbar></app-navbar>
 <mat-drawer-container autosize>
   <mat-drawer #drawer mode="side" position="end">
     <mat-nav-list>
@@ -74,6 +73,7 @@
   <mat-drawer-content
     style="min-height: 100vh; max-width: 100wh; background-color:white"
   >
+  <app-navbar></app-navbar>
     <router-outlet> </router-outlet>
     <app-footer></app-footer>
   </mat-drawer-content>

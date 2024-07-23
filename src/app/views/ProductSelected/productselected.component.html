@@ -1,13 +1,13 @@
 <div class="container text-black">
   <div class="row m-2">
-    <div class="col-xl-6 col-md-6">
+    <div class="col-xl-6 col-md-6 div-half-one">
       <div class="row">
-        <div class="col-xl-4 col-md-4">
+        <div class="col col-xl-4 col-md-5 d-sm-none d-xl-block d-md-none miniimgs">
           <div *ngFor="let item of product?.miniimgs">
             <img class="w-75 rounded mb-2" src="{{ item }}" alt="" />
           </div>
         </div>
-        <div class="col-xl-8 col-md-8">
+        <div class="col col-xl-8 col-md-12 col-sm-12">
           <img class="w-100 rounded" src="{{ product?.image }}" alt="" />
           <button
             mat-raised-button
@@ -23,20 +23,116 @@
         </div>
       </div>
     </div>
-    <div class="col-xl-6 col-md-6">
+    <div class="col-xl-6 col-md-6 col-sm-12 div-half-two" style="max-height: 31.5rem; overflow-y: auto; scrollbar-width: thin;">
       <div class="row">
         <h2>{{ product?.name }}</h2>
         <h4 class="text-secondary">{{ product?.shortdescription }}</h4>
         <h4>
           <b>${{ product?.price }}</b>
         </h4>
+        <div class="d-flex justify-content-between">
+          <h5><b>Select size:</b></h5>
+          <a href=""><h5><b>Size guide</b></h5></a>
+        </div>
         <div
-          class="border text-center col-xl-3 p-2 rounded m-1 size"
+          class="text-center col-xl-1 col-sm-2 p-2 rounded m-1 size border"
           *ngFor="let size of product?.sizes"
           [ngClass]="{ noAvailableSize: size.quantity === 0 }"
         >
           <span>{{ size.size }}</span>
         </div>
+        <div class="rounded bg-light mt-1 cuotas-cartel w-100 d-flex align-items-center justify-content-center">
+          <mat-icon class="m-1">credit_card</mat-icon>
+          <p class="mt-2">Hasta 12 cuotas <b>sin interés</b> en <br> bancos seleccionados</p>
+        </div>
+        <mat-accordion multi class="mt-2">
+          <mat-expansion-panel class="bg-light">
+            <mat-expansion-panel-header>
+              <mat-panel-title class="text-black">
+                  Envíos y Entregas
+              </mat-panel-title>
+              <mat-panel-description>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <ng-container>
+              <mat-checkbox class="w-100">
+                <span class="text-black"></span>
+              </mat-checkbox>
+            </ng-container>
+            <ng-container>
+              <mat-checkbox class="w-100">
+                <span class="text-black"></span>
+              </mat-checkbox>
+            </ng-container>
+            <ng-container>
+              <mat-checkbox class="w-100">
+                <mat-slider class="w-100" min="200" max="500000" color="accent">
+                  <input value="0" matSliderStartThumb>
+                  <input value="400" matSliderEndThumb>
+                </mat-slider>
+              </mat-checkbox>
+            </ng-container>
+          </mat-expansion-panel>
+        </mat-accordion>
+        <mat-accordion multi>
+          <mat-expansion-panel class="text-black bg-light">
+            <mat-expansion-panel-header>
+              <mat-panel-title class="text-black">
+                Métodos de Pago
+              </mat-panel-title>
+              <mat-panel-description>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <ng-container>
+              <mat-checkbox class="w-100">
+                <span class="text-black"></span>
+              </mat-checkbox>
+            </ng-container>
+            <ng-container>
+              <mat-checkbox class="w-100">
+                <span class="text-black"></span>
+              </mat-checkbox>
+            </ng-container>
+            <ng-container>
+              <mat-checkbox class="w-100">
+                <mat-slider class="w-100" min="200" max="500000" color="accent">
+                  <input value="0" matSliderStartThumb>
+                  <input value="400" matSliderEndThumb>
+                </mat-slider>
+              </mat-checkbox>
+            </ng-container>
+          </mat-expansion-panel>
+        </mat-accordion>
+        <mat-accordion multi>
+          <mat-expansion-panel class="text-black bg-light">
+            <mat-expansion-panel-header>
+              <mat-panel-title class="text-black">
+                Compartir
+              </mat-panel-title>
+              <mat-panel-description>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <ng-container>
+              <mat-checkbox class="w-100">
+                <span class="text-black"></span>
+              </mat-checkbox>
+            </ng-container>
+            <ng-container>
+              <mat-checkbox class="w-100">
+                <span class="text-black"></span>
+              </mat-checkbox>
+            </ng-container>
+            <ng-container>
+              <mat-checkbox class="w-100">
+                <mat-slider class="w-100" min="200" max="500000" color="accent">
+                  <input value="0" matSliderStartThumb>
+                  <input value="400" matSliderEndThumb>
+                </mat-slider>
+              </mat-checkbox>
+            </ng-container>
+          </mat-expansion-panel>
+        </mat-accordion>
+
       </div>
     </div>
   </div>
